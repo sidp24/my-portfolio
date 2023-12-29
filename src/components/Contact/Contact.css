@@ -1,0 +1,96 @@
+.contact-container {
+    padding: 4rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.contact-container h2 {
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical; /* Allow only vertical resizing */
+}
+
+.submit-button {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+/* ... existing styles ... */
+
+.confirmation-message {
+    padding: 2rem;
+    margin-top: 2rem;
+    background-color: #e8f4ea; /* Light green background for visual feedback */
+    color: #2e7d32; /* Dark green text color for visibility */
+    border-radius: 4px;
+    font-size: 1.2rem;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+/* Style for the confirmation message */
+.confirmation-message {
+    padding: 2rem;
+    margin-top: 2rem;
+    background-color: #e8f4ea;
+    color: #2e7d32;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s 0.5s forwards; /* Delay the fade-in to wait for form fade-out */
+}
+
+/* Animation for fading in the confirmation message */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
