@@ -1,26 +1,26 @@
+/* Original Styles */
 .hero {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     padding: 1rem;
-    background-color: #000; /* Glide uses a dark theme for the hero section */
-    color: white;
+    color: rgb(233, 233, 233);
     height: 100vh;
     text-align: left;
 }
 
 .hero-text {
-    max-width: 600px; /* Limit the width of the text block */
+    max-width: 600px;
 }
 
 .topline {
-    color: #ccc; /* Lighter text color for the top line */
+    color: rgb(233, 233, 233);
     font-size: 1rem;
     margin-bottom: 0.5rem;
 }
 
 .hero-text h1 {
-    font-size: 4rem; /* Large, bold font size for the main headline */
+    font-size: 4rem;
     line-height: 1.1;
     margin-bottom: 1rem;
 }
@@ -47,37 +47,37 @@
 }
 
 .cta-primary {
-    background-color: #22a6b3; /* Primary button color similar to Glide's */
-    color: white;
+    background-color: #22a6b3;
+    color: rgb(233, 233, 233);
 }
 
 .cta-primary:hover {
-    background-color: #1992a4; /* Darker shade on hover */
+    background-color: #1992a4;
 }
 
 .cta-secondary {
     background-color: transparent;
-    color: white;
-    border: 2px solid white;
+    color: rgb(233, 233, 233);
+    border: 2px solid rgb(168, 168, 168);
 }
 
 .cta-secondary:hover {
-    background-color: white;
+    background-color: rgb(233, 233, 233);
     color: #000;
 }
 
 .hero-media {
-    max-width: 600px; /* Limit the width of the media block */
-    
+    max-width: 600px;
 }
 
 .hero-media img {
     max-width: 100%;
-    height: 90vh;
-    border-radius: 8px; /* Optional: if you want rounded corners */
+    height: 80vh;
+    border-radius: 8px;
+    box-shadow: 0.3em 0.3em 1em rgba(171, 171, 171, 0.6);
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
     .hero {
         flex-direction: column;
@@ -90,9 +90,42 @@
 
     .hero-media img {
         margin-top: 2rem;
+        max-width: 55%; /* Making the image smaller */
+        height: auto; /* Adjust height proportionally */
+    }
+
+    .hero-text h1 {
+        font-size: 3rem; /* Smaller font size for title */
+        margin-top: 1rem; /* Lowering the title */
     }
 
     .cta-buttons {
         justify-content: center;
     }
+}
+
+/* Additional adjustments for very small screens */
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 2.5rem;
+        margin-top: 1.5rem; /* Further lowering the title */
+    }
+
+    .subheadline {
+        font-size: 1rem;
+    }
+
+    .cta-primary, .cta-secondary {
+        padding: 0.75rem 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .topline {
+        font-size: 0.9rem;
+    }
+}
+
+/* Background class */
+.bg {
+    height: 100vh;
 }

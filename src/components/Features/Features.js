@@ -6,7 +6,6 @@ import Image2 from '../images/DVD.png';
 import Image3 from '../images/dummyboard.jpg';
 
 const Features = () => {
-    // Replace with your actual projects data
     const projects = [
         {
             id: 1,

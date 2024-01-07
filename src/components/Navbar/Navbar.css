@@ -1,47 +1,81 @@
-/* Make the navbar sticky */
 .navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ffffff; /* or any color you prefer */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 0.1rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 0.1rem 1.5rem;
 }
 
 /* Branding and links styling */
 .navbar-brand {
-    color: #333;
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .navbar-links {
-    display: flex;
+  display: flex;
 }
 
 .navbar-links a {
-    color: #333;
-    text-decoration: none;
-    margin-left: 1rem;
-    padding: 0.5rem 1rem;
-    transition: color 0.3s ease, background-color 0.3s ease;
+  color: #333;
+  text-decoration: none;
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .navbar-links a:hover {
-    color: #0275d8; /* Change for hover effect */
-    background-color: #f8f9fa; /* Light background on hover */
-    border-radius: 5px;
+  color: #0275d8; /* Change for hover effect */
+  background-color: #f8f9fa; /* Light background on hover */
+  border-radius: 5px;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
 }
 
-/* Responsive design for smaller screens */
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Show the hamburger menu on smaller screens */
 @media screen and (max-width: 768px) {
     .navbar-links {
-        display: none; /* Hide links on smaller screens */
+        position: fixed;
+        top: 6vh;
+        right: 0;
+        height: 12vh;
+        width: 100%; /* Full width */
+        background-color: #ffffff;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        overflow-y: auto; /* Allows vertical scrolling */
+        overflow-x: hidden; /* Prevents horizontal scrolling */
     }
 
-    /* You can add a hamburger menu icon here for smaller screens */
+    .navbar-links.active {
+        transform: translateX(0);
+    }
+
+    .navbar-links:not(.active) {
+        width: 0;
+        overflow: hidden;
+    }
+  .hamburger {
+    display: flex;
+  }
 }

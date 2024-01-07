@@ -1,35 +1,137 @@
-@import url("https://fonts.googleapis.com/css?family=K2D&display=swap");
-#about {
-    background-color: rgb(255, 255, 255);
-    padding: 0.5rem 0; /* Top and bottom padding */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-}
-
 .about {
-    width: 80%; /* Control the width of the content */
-    margin: 0 auto; /* Center align the content */
-    text-align: center; /* Center the text */
+  padding: 50px 10px;
+  text-align: center;
+  transition: background-color 0.3s;
 }
 
-.about h2 {
-    font-size: 2rem; /* Larger font size for the heading */
-    color: #333; /* Darker color for better contrast */
-    margin-bottom: 1rem; /* Spacing below the heading */
-
+.about-inner {
+  margin: auto;
+  max-width: 800px;
 }
 
-.about p {
-    
-    color: #666; /* Slightly lighter color for the text */
-    font-size: 1rem; /* Comfortable reading size */
-    line-height: 1.6; /* Line height for better readability */
-    text-align: justify; /* Justify the paragraph for clean edges */
-    margin-bottom: 1rem; /* Spacing below the paragraph */
+.about-title {
+  font-size: 2.5rem; /* Adjusted for scaling */
+  margin-bottom: 20px;
+  color: whitesmoke;
 }
 
-@media screen and (max-width: 768px) {
-    .about {
-        width: 90%; /* Increase width for smaller screens */
-    }
+.about-description {
+  font-size: calc(1rem + 0.5vw); /* Responsive font size */
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: whitesmoke;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexible grid layout */
+  gap: 20px; /* Space between cards */
+  padding: 0 20px;
+  align-items: center;
+}
+
+.stat {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden; /* Ensures content does not overflow */
+}
+
+.stat:hover,
+.stat:focus {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.stat h3 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: calc(1rem + 0.3vw); /* Responsive font size */
+}
+
+.stat-value {
+  font-size: calc(1.5rem + 0.3vw); /* Responsive font size */
+  font-weight: bold;
+  color: #333;
+  word-wrap: break-word; /* Breaks long words to prevent overflow */
+}
+
+@media (max-width: 768px) {
+  .about-stats {
+    flex-direction: column;
+  }
+
+  .stat {
+    margin-bottom: 20px;
+  }
+}
+
+/* Resume */
+.resume-download-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff; 
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.resume-download-link:hover {
+  background-color: #0056b3; 
+}
+@media (max-width: 768px) {
+  .about {
+    padding: 30px 10px; /* Reduced padding */
+  }
+
+  .about-title {
+    font-size: 2rem; /* Slightly smaller font size */
+  }
+
+  .about-description {
+    font-size: calc(0.9rem + 0.5vw); /* Smaller base size for font */
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr; /* Stack stats vertically */
+  }
+
+  .stat h3 {
+    font-size: calc(0.9rem + 0.3vw); /* Smaller base size for font */
+  }
+
+  .stat-value {
+    font-size: calc(1.3rem + 0.3vw); /* Smaller base size for font */
+  }
+
+  .resume-download-link {
+    padding: 8px 16px; /* Slightly reduced padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-title {
+    font-size: 1.8rem; /* Even smaller font size for very small screens */
+  }
+
+  .about-description,
+  .stat h3,
+  .stat-value {
+    font-size: calc(0.8rem + 1vw); /* Increase the responsiveness factor */
+  }
+
+  .about-stats {
+    padding: 0 10px; /* Reduce side padding */
+  }
+
+  .stat {
+    padding: 15px; /* Slightly reduced padding */
+  }
 }
