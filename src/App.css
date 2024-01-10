@@ -37,3 +37,30 @@
     transform: rotate(360deg);
   }
 }
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 14px; /* Width of the scrollbar */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollbar thumb */
+  border-radius: 6px; /* Rounded corners on the scrollbar thumb */
+  border: 3px solid #f0f0f0; /* Creates a border inside the scrollbar */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Darker color on hover */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Color of the scrollbar track */
+  border-radius: 6px; /* Rounded corners on the scrollbar track */
+}
+
+/* Optional: Adding a scrollbar corner (where both horizontal and vertical scrollbars meet) */
+::-webkit-scrollbar-corner {
+  background: #f0f0f0;
+}

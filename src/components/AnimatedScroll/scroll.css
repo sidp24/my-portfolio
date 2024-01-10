@@ -1,0 +1,31 @@
+/* ScrollFadeIn Component Styling */
+
+/* Ensure the initial state is set for the hidden elements */
+.scroll-fade-in-hidden {
+    opacity: 0;
+    transform: translateY(20px); /* Adjust if you want a different initial vertical position */
+  }
+  
+  /* General styles for the animated content */
+  .scroll-fade-in-content {
+    opacity: 1;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  /* You may need to adjust margins and padding of the elements inside the ScrollFadeIn component */
+  .scroll-fade-in-content > * {
+    margin-bottom: 20px; /* Adjust as needed for your layout */
+  }
+  
+  /* For smoother animations, you can include will-change property */
+  .scroll-fade-in-content {
+    will-change: opacity, transform;
+  }
+  
+  /* Responsive adjustments if necessary */
+  @media (max-width: 768px) {
+    .scroll-fade-in-content > * {
+      margin-bottom: 15px; /* Adjust for smaller screens */
+    }
+  }
+  
