@@ -1,4 +1,4 @@
-import React from 'react';
+import Reweact from 'react';
 import './Features.css';
 import ProjectCard from '../ProjectCard/ProjectCard';
 import Image1 from '../images/myndful.png'; // Adjust paths as needed

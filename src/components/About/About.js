@@ -25,13 +25,18 @@ const items = [
     },
     {
         title: "May 2023",
-        cardTitle: "ICode Birdgewater",
+        cardTitle: "ICode Bridgewater",
         cardDetailedText: "Led dynamic and educational summer camps, inspiring young individuals to create interactive games and refine their programming abilities. Established an inclusive and stimulating educational atmosphere, nurturing creativity and inquisitiveness in students while imparting detailed knowledge of software development.",
     },
     {
         title: "August 2023",
         cardTitle: "Edweb Presentation",
         cardDetailedText: "As one of the keynote speakers at an edWebinar, I discussed how my team and I noticed the inadequacy of their school's mental health resources and took the initiative to develop the world's first machine learning chatbot, Myndful.AI, aimed at providing a comprehensive mental health resource directory for high school students. The focus of my talk was on the user-centric design of Myndful.AI, emphasizing its sleek, intuitive interface that enables free, direct communication with the chatbot and provides easy access to a range of curated mental health resources. The webinar also provided insights into the application of artificial intelligence in educational settings and its role in supporting student mental health.",
+    },
+    {
+        title: "May 2024",
+        cardTitle: "Iconectiv Ericcson",
+        cardDetailedText: "Worked in the DevOps team to architect and develop a platform for displaying third-party software dependencies across all applications. Engineered a Python-based back-end solution to automate the extraction and parsing of GitHub repositories, capturing library names and metadata. Developed the application's front end utilizing Ruby on Rails, the Smashing dashboard framework, and Node.js.",
     },
     // {
     //     title: "March 2022",
@@ -52,7 +57,7 @@ const About = () => {
                 <div className="about-stats">
                     <div className="stat" tabIndex="0">
                         <h3>Experience</h3>
-                        <p className="stat-value">3+ Years</p>
+                        <p className="stat-value">4+ Years</p>
                     </div>
                     <div className="stat" tabIndex="0">
                         <h3>Projects</h3>
@@ -60,7 +65,7 @@ const About = () => {
                     </div>
                     <div className="stat" tabIndex="0">
                         <h3>Languages</h3>
-                        <p className="stat-value">Java, JavaScript, Python, C#, HTML + CSS</p>
+                        <p className="stat-value">Java, JavaScript, Python, C#, HTML + CSS, Ruby</p>
                     </div>
                     <div className="stat" tabIndex="0">
                         <h3>Relevant Coursework</h3>
