@@ -1,4 +1,4 @@
-/* Original Styles */
+/* Updated Styles */
 .hero {
     display: flex;
     align-items: center;
@@ -7,6 +7,7 @@
     color: rgb(233, 233, 233);
     height: 100vh;
     text-align: left;
+    flex-wrap: wrap; /* To prevent overflow on smaller screens */
 }
 
 .hero-text {
@@ -68,11 +69,15 @@
 
 .hero-media {
     max-width: 600px;
+    display: flex;
+    justify-content: center;
 }
 
 .hero-media img {
-    max-width: 100%;
-    height: 80vh;
+    width: 100%;
+    max-width: 700px; /* Ensure the image remains a square */
+    height: auto;
+    aspect-ratio: 1 / 1; /* Force a square ratio */
     border-radius: 8px;
     box-shadow: 0.3em 0.3em 1em rgba(171, 171, 171, 0.6);
 }
@@ -90,13 +95,13 @@
 
     .hero-media img {
         margin-top: 2rem;
-        max-width: 55%; /* Making the image smaller */
-        height: auto; /* Adjust height proportionally */
+        max-width: 75%; /* Scale down image for smaller screens */
+        aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
     }
 
     .hero-text h1 {
-        font-size: 3rem; /* Smaller font size for title */
-        margin-top: 1rem; /* Lowering the title */
+        font-size: 3rem;
+        margin-top: 1rem;
     }
 
     .cta-buttons {
@@ -108,7 +113,7 @@
 @media (max-width: 480px) {
     .hero-text h1 {
         font-size: 2.5rem;
-        margin-top: 1.5rem; /* Further lowering the title */
+        margin-top: 1.5rem;
     }
 
     .subheadline {
@@ -122,6 +127,11 @@
 
     .topline {
         font-size: 0.9rem;
+    }
+
+    .hero-media img {
+        max-width: 100%; /* Full width on very small screens */
+        height: auto; /* Maintain aspect ratio */
     }
 }
 
