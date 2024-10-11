@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './About.css';
-// import Timeline from './Timeline/Timeline';
-import { Chrono } from "react-chrono";
-// import Skill from './Skills/Skills'; 
-
+import { Chrono } from 'react-chrono';
 import resume from './FullResume.pdf';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import the Font Awesome component
+import { faTimes } from '@fortawesome/free-solid-svg-icons'; // Import the "X" icon
 
+// Modal Component
+const Modal = ({ isOpen, onClose, children }) => {
+    if (!isOpen) return null;
+    return (
+        <div className="modal-overlay">
+            <div className="modal-content">
+                <button className="close-button" onClick={onClose}>
+                    <FontAwesomeIcon icon={faTimes} /> {/* Use the Font Awesome 'X' icon */}
+                </button>
+                {children}
+            </div>
+        </div>
+    );
+};
 
 const items = [
     {
@@ -47,67 +60,173 @@ const items = [
 ];
 
 const About = () => {
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [modalContent, setModalContent] = useState(null);
+
+    const openModal = (content) => {
+        setModalContent(content);
+        setIsModalOpen(true);
+    };
+
     return (
-        <div className="about"  id="about">
-            <div className="about-inner">
-                <h2 className="about-title">About Me</h2>
-                <p className="about-description">
-                    I'm a passionate software developer with a knack for creating seamless user experiences and robust backend systems. With a love for both design and functionality, I craft software that not only looks good but performs exceptionally.
-                </p>
-                <div className="about-stats">
-                    <div className="stat" tabIndex="0">
+
+        <div className="about" id="about">
+            <h1>About Me</h1>
+
+            <div className="card-container">
+                {/* About Me Card */}
+                <div className="card" onClick={() => openModal('about')}>
+                    <div className="card-front">
+                        <h3>Bio</h3>
+                    </div>
+                </div>
+
+                {/* Experience Card */}
+                <div className="card" onClick={() => openModal('experience')}>
+                    <div className="card-front">
                         <h3>Experience</h3>
-                        <p className="stat-value">4+ Years</p>
                     </div>
-                    <div className="stat" tabIndex="0">
-                        <h3>Projects</h3>
-                        <p className="stat-value">10+ Completed</p>
+                </div>
+
+                {/* Skills Card */}
+                <div className="card" onClick={() => openModal('skills')}>
+                    <div className="card-front">
+                        <h3>Skills</h3>
                     </div>
-                    <div className="stat" tabIndex="0">
-                        <h3>Languages</h3>
-                        <p className="stat-value">Java, JavaScript, Python, C#, HTML + CSS, Ruby</p>
-                    </div>
-                    <div className="stat" tabIndex="0">
+                </div>
+
+                {/* Relevant Coursework Card */}
+                <div className="card" onClick={() => openModal('coursework')}>
+                    <div className="card-front">
                         <h3>Relevant Coursework</h3>
-                        <p className="stat-value">Introduction to CS, Physics 203 + 204</p>
                     </div>
                 </div>
             </div>
-            <br></br>
-            <br></br>
 
-            <Chrono
-                items={items}
-                mode="VERTICAL_ALTERNATING"
-                theme={{
-                    primary: "#4f5d75",
-                    secondary: "#f4f4f4",
-                    cardBgColor: "#ffffff",
-                    cardSubtitleColor: "#4f5d75",
-                    titleColor: "#FAF9F6",
-                    titleColorActive: "#4f5d75",
-                    cardTitleColor: "#333333",
-                    cardDetailsColor: "#4f5d75",
-                    iconBackgroundColor: "#bfc0c0",
-                }}
-                fontSizes={{
-                    cardSubtitle: "0.9rem",
-                    cardText: "1rem",
-                    cardTitle: "1.2rem",
-                    title: "3vw"
-                }}
+            {/* Modal for detailed content */}
+            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+                {modalContent === 'about' && (
+                    <div className="modal-about">
+                        <h2>Bio</h2>
+                        <p>
+                            I'm a passionate software developer with a knack for creating seamless user experiences and robust backend systems. With a love for both design and functionality, I craft software that not only looks good but performs exceptionally.                        </p>
+                        <a href={resume} download="MyResume.pdf" className="resume-download-link">
+                            Download My Resume
+                        </a>
+                    </div>
+                )}
 
-                cardHeight={10}
-                mediaHeight={1}
-                contentDetailsHeight={100}
-            />
+                {modalContent === 'experience' && (
+                    <div className="modal-experience">
+                        <h2>Experience</h2>
+                        <Chrono
+                            items={items}
+                            mode="VERTICAL_ALTERNATING"
+                            theme={{
+                                primary: '#4f5d75',
+                                secondary: '#f4f4f4',
+                                cardBgColor: '#ffffff',
+                            }}
+                        />
+                    </div>
+                )}
 
-            <a href={resume} download="SiddharthPaulResume.pdf" className="resume-download-link">
-                Download My Resume
-            </a>
+                {modalContent === 'skills' && (
+                    <div className="modal-skills">
+                        <h2>Skills</h2>
+                        <div className="skills-grid">
+                            {/* Programming Languages */}
+                            <div className="skills-category">
+                                <h3>Programming Languages</h3>
+                                <ul className="skills-list">
+                                    <li>JavaScript</li>
+                                    <li>Python</li>
+                                    <li>Java</li>
+                                    <li>C#</li>
+                                </ul>
+                            </div>
+
+                            {/* Soft Skills */}
+                            <div className="skills-category">
+                                <h3>Soft Skills</h3>
+                                <ul className="skills-list">
+                                    <li>Communication</li>
+                                    <li>Problem-Solving</li>
+                                    <li>Teamwork</li>
+                                    <li>Leadership</li>
+                                    <li>Time Management</li>
+                                </ul>
+                            </div>
+
+                            {/* Development Frameworks */}
+                            <div className="skills-category">
+                                <h3>Development Frameworks</h3>
+                                <ul className="skills-list">
+                                    <li>React</li>
+                                    <li>Node.js</li>
+                                    <li>Django</li>
+                                    <li>Ruby on Rails</li>
+                                </ul>
+                            </div>
+
+                            {/* DevOps and Cloud Technologies */}
+                            <div className="skills-category">
+                                <h3>DevOps & Cloud Technologies</h3>
+                                <ul className="skills-list">
+                                    <li>Docker</li>
+                                    <li>AWS</li>
+                                    <li>Google Cloud Platform</li>
+                                    <li>CI/CD Pipelines</li>
+                                </ul>
+                            </div>
+
+                            {/* Version Control */}
+                            <div className="skills-category">
+                                <h3>Version Control</h3>
+                                <ul className="skills-list">
+                                    <li>Git</li>
+                                    <li>GitHub</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
+
+                {modalContent === 'coursework' && (
+                    <div className="modal-coursework">
+                        <h2>Relevant Coursework</h2>
+                        <div className="coursework-section">
+                            <h3>Physics Coursework</h3>
+                            <ul className="coursework-list">
+
+                                <li>Modern Physics</li>
+                                <li>Physics 203</li>
+                                <li> Physics 204</li>
+                                <li> Analytical Physics II</li>
+                                <li> Calculus I</li>
+                                <li> Calculus II</li>
+                                <li> Multivariable Calculus</li>
+                            </ul>
+                        </div>
+                        <div className="divider"></div>
+                        <div className="coursework-section">
+                            <h3>Computer Science Coursework</h3>
+                            <ul className="coursework-list">
+                                <li>Introduction to Computer Science</li>
+                                <li>Data Structures and Algorithms</li>
+                                <li>Introduction to Discrete Structures I</li>
+                                <li>Intoduction to Linear Algebra</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                )}
+            </Modal>
         </div>
-
     );
 };
 
 export default About;
+

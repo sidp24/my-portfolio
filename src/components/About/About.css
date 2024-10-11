@@ -1,137 +1,209 @@
 .about {
+  height: 100vh;
   padding: 50px 10px;
   text-align: center;
-  transition: background-color 0.3s;
 }
 
-.about-inner {
-  margin: auto;
-  max-width: 800px;
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 40px;
 }
 
-.about-title {
-  font-size: 2.5rem; /* Adjusted for scaling */
-  margin-bottom: 20px;
-  color: whitesmoke;
+h1 {
+  font-size: 3rem;
+  color: #e7e7e7;
+  padding-bottom: 10px;
 }
 
-.about-description {
-  font-size: calc(1rem + 0.5vw); /* Responsive font size */
-  line-height: 1.6;
-  margin-bottom: 30px;
-  color: whitesmoke;
-}
-
-.about-stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexible grid layout */
-  gap: 20px; /* Space between cards */
-  padding: 0 20px;
-  align-items: center;
-}
-
-.stat {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+.card {
+  perspective: 1000px;
+  width: 800px;
+  height: 300px;
   cursor: pointer;
-  outline: none;
-  transition: transform 0.3s, box-shadow 0.3s;
-  overflow: hidden; /* Ensures content does not overflow */
+  transition: transform 0.6s ease-in-out, background-color 0.3s ease;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  /* background: linear-gradient(135deg, #6a1b9a, #283593); */
+background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask2126%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='url(%26quot%3b%23SvgjsLinearGradient2127%26quot%3b)'%3e%3c/rect%3e%3cpath d='M912.5037256074306 230.41273616281913L1045.94387889684 181.84449230955474 863.9354817541662 96.97258287340975z' fill='rgba(35%2c 97%2c 163%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1298.8165530761548-11.337759354258063L1197.3474250721724 19.684466297415497 1228.369650723846 121.15359430139783 1329.8387787278284 90.13136864972427z' fill='rgba(35%2c 97%2c 163%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M755.07%2c189.607C780.234%2c190.93%2c804.01%2c177.08%2c816.705%2c155.313C829.496%2c133.382%2c829.154%2c106.271%2c816.517%2c84.251C803.822%2c62.131%2c780.561%2c47.107%2c755.07%2c47.914C730.764%2c48.684%2c710.996%2c66.243%2c700.015%2c87.941C690.087%2c107.559%2c693.252%2c130.039%2c703.722%2c149.373C714.82%2c169.866%2c731.797%2c188.384%2c755.07%2c189.607' fill='rgba(35%2c 97%2c 163%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M153.71091970610811 92.54721799218632L61.13011096692176 43.321128794713516 33.581381540305756 206.80538650222945z' fill='rgba(35%2c 97%2c 163%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M445.89%2c380.966C462.662%2c381.19%2c475.438%2c368.089%2c484.15%2c353.756C493.314%2c338.68%2c500.515%2c320.495%2c492.062%2c305.009C483.355%2c289.057%2c464.064%2c283.615%2c445.89%2c283.661C427.812%2c283.707%2c408.569%2c289.259%2c400.12%2c305.241C392.037%2c320.53%2c400.414%2c337.956%2c409.36%2c352.757C417.889%2c366.869%2c429.402%2c380.746%2c445.89%2c380.966' fill='rgba(35%2c 97%2c 163%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M688.8371725361865 515.703657686819L827.0806062010525 425.92732215515866 599.0608370045261 377.46022402195297z' fill='rgba(35%2c 97%2c 163%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1243.3650617522435 101.20018950426739L1311.8010214382343 16.688817483289924 1158.853689731266 32.76422981827655z' fill='rgba(35%2c 97%2c 163%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1259.243%2c670.072C1301.977%2c670.104%2c1342.933%2c653.212%2c1366.821%2c617.778C1394.042%2c577.4%2c1407.333%2c526.3%2c1385.519%2c482.762C1361.621%2c435.065%2c1312.458%2c399.282%2c1259.243%2c403.062C1210.28%2c406.54%2c1182.587%2c454.833%2c1160.632%2c498.735C1141.585%2c536.823%2c1130.705%2c580.706%2c1151.947%2c617.615C1173.231%2c654.596%2c1216.574%2c670.04%2c1259.243%2c670.072' fill='rgba(35%2c 97%2c 163%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1048.5777943261442 498.3461518978127L1104.5978832436986 344.4322225609917 894.6638649893232 442.32606298025826z' fill='rgba(35%2c 97%2c 163%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1458.8238333693764 90.13710631491465L1396.2288913275374 27.542164273075727 1333.6339492856985 152.73204835675358z' fill='rgba(35%2c 97%2c 163%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M679.666509795487 221.44203270504585L768.1916003062321 133.08551418878983 663.0924769779277 102.94882552710266z' fill='rgba(35%2c 97%2c 163%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask2126'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='15.28%25' y1='139.29%25' x2='84.72%25' y2='-39.29%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient2127'%3e%3cstop stop-color='rgba(54%2c 17%2c 132%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(72%2c 8%2c 130%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");  /* Purple to Dark Blue Gradient */
+  color: white;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.stat:hover,
-.stat:focus {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+.card:hover {
+  transform: scale(1.05);
 }
 
-.stat h3 {
-  color: #333;
+.card-front {
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 80%;
+  max-height: 80%;
+  overflow-y: auto;
+  position: relative;
+  z-index: 1010;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff1744;
+  /* Red Color */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  /* Ensures it's a perfect circle */
+  width: 35px;
+  /* Width of the circle */
+  height: 35px;
+  /* Height of the circle */
+  display: flex;
+  /* Flexbox to center the icon */
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+  cursor: pointer;
+  padding: 0;
+  /* Remove any additional padding */
+}
+
+.close-button:hover {
+  background-color: #d50000;
+  /* Darker red on hover */
+}
+
+
+
+
+/* Skills Grid */
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  /* Adjusts to auto-fit columns */
+  gap: 20px;
+}
+
+.skills-category {
+  break-inside: avoid;
+  /* Prevent breaking in the middle of a category */
+}
+
+.skills-list {
+  column-count: 2;
+  /* Creates two columns for large lists */
+  column-gap: 20px;
+  /* Spacing between columns */
+  padding: 0;
+  list-style: none;
+}
+
+.skills-list li {
+  font-size: 1.1rem;
   margin-bottom: 10px;
-  font-size: calc(1rem + 0.3vw); /* Responsive font size */
-}
-
-.stat-value {
-  font-size: calc(1.5rem + 0.3vw); /* Responsive font size */
-  font-weight: bold;
   color: #333;
-  word-wrap: break-word; /* Breaks long words to prevent overflow */
 }
 
-@media (max-width: 768px) {
-  .about-stats {
-    flex-direction: column;
-  }
-
-  .stat {
-    margin-bottom: 20px;
-  }
+/* Coursework Section */
+.coursework-section {
+  margin-bottom: 30px;
 }
 
-/* Resume */
+.coursework-section h3 {
+  font-size: 1.3rem;
+  color: #7b818b;
+  border-bottom: 2px solid #e5e5e5;
+  padding-bottom: 10px;
+}
+
+.coursework-list {
+  column-count: 2;
+  /* Creates two columns for large lists */
+  column-gap: 20px;
+  /* Spacing between columns */
+  padding: 0;
+  list-style: none;
+}
+
+.coursework-list li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Divider */
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: #e5e5e5;
+  margin: 30px 0;
+}
+
 .resume-download-link {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #007bff; 
+  background-color: #007bff;
   color: white;
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
 
 .resume-download-link:hover {
-  background-color: #0056b3; 
+  background-color: #0056b3;
 }
+
 @media (max-width: 768px) {
-  .about {
-    padding: 30px 10px; /* Reduced padding */
+  .card-container {
+    gap: 20px;
   }
 
-  .about-title {
-    font-size: 2rem; /* Slightly smaller font size */
+  .card {
+    width: 100%;
+    height: auto;
   }
 
-  .about-description {
-    font-size: calc(0.9rem + 0.5vw); /* Smaller base size for font */
-  }
-
-  .about-stats {
-    grid-template-columns: 1fr; /* Stack stats vertically */
-  }
-
-  .stat h3 {
-    font-size: calc(0.9rem + 0.3vw); /* Smaller base size for font */
-  }
-
-  .stat-value {
-    font-size: calc(1.3rem + 0.3vw); /* Smaller base size for font */
-  }
-
-  .resume-download-link {
-    padding: 8px 16px; /* Slightly reduced padding */
+  .skills-grid {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 480px) {
-  .about-title {
-    font-size: 1.8rem; /* Even smaller font size for very small screens */
+  .card h3 {
+    font-size: 1.8rem;
   }
 
-  .about-description,
-  .stat h3,
-  .stat-value {
-    font-size: calc(0.8rem + 1vw); /* Increase the responsiveness factor */
-  }
-
-  .about-stats {
-    padding: 0 10px; /* Reduce side padding */
-  }
-
-  .stat {
-    padding: 15px; /* Slightly reduced padding */
+  .skills-list li,
+  .coursework-list li {
+    font-size: 1rem;
   }
 }

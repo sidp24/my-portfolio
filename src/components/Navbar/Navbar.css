@@ -5,17 +5,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffffff; 
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 0.1rem 1.5rem;
+  background: linear-gradient(45deg, #c7c7c7, #808080);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 0.4rem 2rem;
+  transition: background 0.3s ease-in-out;
 }
 
 /* Branding and links styling */
 .navbar-brand {
-  color: #333;
+  color: #2c2c2c;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #d1e8ff;
 }
 
 .navbar-links {
@@ -23,58 +29,88 @@
 }
 
 .navbar-links a {
-  color: #333;
+  color: #242424;
+  font-weight: 900;
   text-decoration: none;
-  margin-left: 1rem;
+  margin-left: 1.5rem;
   padding: 0.5rem 1rem;
-  transition: color 0.3s ease, background-color 0.3s ease;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-links a:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-links a:hover:before {
+  width: 100%;
 }
 
 .navbar-links a:hover {
-  color: #0275d8; /* Change for hover effect */
-  background-color: #f8f9fa; /* Light background on hover */
-  border-radius: 5px;
+  transform: scale(1.05);
+  color: #d1e8ff;
 }
+
 .hamburger {
   display: none;
   flex-direction: column;
   cursor: pointer;
+  transition: transform 0.3s ease-in-out;
 }
 
 .hamburger div {
-  width: 25px;
+  width: 30px;
   height: 3px;
-  background-color: #333;
+  background-color: #fff;
   margin: 5px;
   transition: all 0.3s ease;
 }
 
-/* Show the hamburger menu on smaller screens */
+.hamburger.active div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active div:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Styles */
 @media screen and (max-width: 768px) {
-    .navbar-links {
-        position: fixed;
-        top: 6vh;
-        right: 0;
-        height: 12vh;
-        width: 100%; /* Full width */
-        background-color: #ffffff;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-        flex-direction: column;
-        justify-content: start;
-        align-items: center;
-        overflow-y: auto; /* Allows vertical scrolling */
-        overflow-x: hidden; /* Prevents horizontal scrolling */
-    }
+  .navbar-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: #283e51;
+    transform: translateX(100%);
+    transition: transform 0.5s ease;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+  }
 
-    .navbar-links.active {
-        transform: translateX(0);
-    }
+  .navbar-links.active {
+    transform: translateX(0);
+  }
 
-    .navbar-links:not(.active) {
-        width: 0;
-        overflow: hidden;
-    }
+  .navbar-links a {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+  }
+
   .hamburger {
     display: flex;
   }
