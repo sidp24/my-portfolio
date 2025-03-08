@@ -1,41 +1,78 @@
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
   z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(45deg, #c7c7c7, #808080);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  padding: 0.4rem 2rem;
-  transition: background 0.3s ease-in-out;
+  padding: 0.8rem 1rem;
+  padding-right: 2.5rem; /* Extra right padding added */
+  transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Branding and links styling */
 .navbar-brand {
-  color: #2c2c2c;
+  color: rgb(255, 255, 255);
   text-decoration: none;
   font-size: 1.8rem;
   font-weight: bold;
   transition: color 0.3s ease;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  transition: ease-in-out 0.3s;
 }
 
 .navbar-brand:hover {
-  color: #d1e8ff;
+  color: #d0bfeb;
+  text-shadow: 0 0 20px #ffffff;
+  transform: scale(1.02);
+
+}
+
+.navbar-brand a:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #d0bfeb;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-brand a:hover:before {
+  width: 100%;
+
+}
+
+.navbar-brand a:hover {
+  transform: scale(1.05);
+  color: #d0bfeb;
+  text-shadow: 0 0 20px #ffffff;
 }
 
 .navbar-links {
+  font-size: 1rem;
   display: flex;
+  padding-right: 2vw;
 }
 
 .navbar-links a {
-  color: #242424;
+  color: rgb(255, 255, 255);
   font-weight: 900;
   text-decoration: none;
   margin-left: 1.5rem;
   padding: 0.5rem 1rem;
   position: relative;
   transition: color 0.3s ease, transform 0.3s ease;
+
+
+
 }
 
 .navbar-links a:before {
@@ -45,7 +82,7 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #fff;
+  background-color: #d0bfeb;
   transition: all 0.3s ease-in-out;
 }
 
@@ -55,7 +92,8 @@
 
 .navbar-links a:hover {
   transform: scale(1.05);
-  color: #d1e8ff;
+  color: #d0bfeb;
+  text-shadow: 0 0 20px #ffffff;
 }
 
 .hamburger {
@@ -68,7 +106,8 @@
 .hamburger div {
   width: 30px;
   height: 3px;
-  background-color: #fff;
+  background-color: rgba(255, 255, 0, 0.6);
+  ;
   margin: 5px;
   transition: all 0.3s ease;
 }
@@ -114,4 +153,8 @@
   .hamburger {
     display: flex;
   }
+}
+
+strong {
+  font-weight: bold;
 }
