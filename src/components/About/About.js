@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './About.css';
 import { Chrono } from 'react-chrono';
-import resume from './FullResume.pdf';
+import resume from './SiddharthPaulResume.pdf';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import the Font Awesome component
 import { faTimes } from '@fortawesome/free-solid-svg-icons'; // Import the "X" icon
 
@@ -111,7 +111,7 @@ const About = () => {
                         <h2>Bio</h2>
                         <p>
                             I'm a passionate software developer with a knack for creating seamless user experiences and robust backend systems. With a love for both design and functionality, I craft software that not only looks good but performs exceptionally.                        </p>
-                        <a href={resume} download="MyResume.pdf" className="resume-download-link">
+                        <a href={resume} download="SiddharthPaulResume.pdf" className="resume-download-link">
                             Download My Resume
                         </a>
                     </div>
