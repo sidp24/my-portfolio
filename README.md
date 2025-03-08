@@ -77,8 +77,8 @@ This project is open-source and available under the MIT License.
 
 If you have any questions or suggestions, feel free to reach out:
 - GitHub: [@sidp24](https://github.com/sidp24)
-- Email: [your-email@example.com](mailto:your-email@example.com)
-- LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/)
+- Email: [siduserpaul@gmail.com](mailto:siduserpaul@gmail.com)
+- LinkedIn: [@siddharth-paul24/](https://www.linkedin.com/Siddharth-Paul24)
 
 Thank you for visiting my portfolio!
 ```
