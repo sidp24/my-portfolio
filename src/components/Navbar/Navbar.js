@@ -18,7 +18,7 @@ const Navbar = () => {
             <div className={`navbar-links ${isOpen ? 'active' : ''}`}>
                 <a href="#about" onClick={closeMenu}>About</a>
                 <a href="#projects" onClick={closeMenu}>Projects</a>
-                <a href="#contact" onClick={closeMenu}>Contact</a>
+                {/* <a href="#contact" onClick={closeMenu}>Contact</a> */}
 
             </div>
             <div className={`hamburger ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
