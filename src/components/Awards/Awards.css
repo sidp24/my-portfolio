@@ -1,0 +1,203 @@
+:root{
+          --bg:#0f0a1f;
+          --text:#e8eef7;
+          --muted:#bfc6d4;
+          --border:rgba(255,255,255,.14);
+          --panel:rgba(255,255,255,.06);
+          --panel2:rgba(255,255,255,.10);
+          --accent:#7cf2c6;
+          --accent2:#7cb8ff;
+          --chip:rgba(255,255,255,.08);
+          --chipH:rgba(255,255,255,.16);
+        }
+
+        .ac {
+          background:
+            radial-gradient(1200px 600px at 10% -10%, rgba(138,43,226,.22), transparent 60%),
+            radial-gradient(900px 500px at 100% 0%, rgba(156,163,175,.14), transparent 60%),
+            var(--bg);
+          color: var(--text);
+          padding: clamp(4rem, 8vw, 6rem) min(6vw, 4rem); /* Increased padding */
+          box-shadow: inset 0 10px 40px rgba(0,0,0,.35);
+        }
+
+        .ac__header {
+          max-width: 980px;
+          margin: 0 auto 2.5rem auto; /* Increased bottom margin */
+          text-align: center;
+        }
+        .ac__header h2 {
+          margin: 0 0 1rem 0; /* Increased margin bottom */
+          font-size: clamp(2.2rem, 3.5vw, 2.8rem); /* Larger font size */
+          line-height: 1.2;
+          background: linear-gradient(90deg, var(--accent), var(--accent2));
+          -webkit-background-clip:text;
+          background-clip:text;
+          color:transparent;
+        }
+        .ac__header p {
+          margin: 0;
+          color: var(--muted);
+          font-size: clamp(.98rem, 1.6vw, 1.05rem);
+        }
+
+        .ac__grid {
+          display: grid;
+          grid-template-columns: repeat(12, 1fr);
+          gap: clamp(1.5rem, 3vw, 2rem); /* Increased gap */
+          max-width: 1200px; /* Slightly wider */
+          margin: 0 auto;
+          padding: 0 1rem; /* Added horizontal padding */
+        }
+
+        .ac__group {
+          grid-column: span 12;
+          background: linear-gradient(180deg, var(--panel2), var(--panel));
+          border: 1px solid var(--border);
+          border-radius: 20px; /* Increased border radius */
+          padding: clamp(1.5rem, 2.5vw, 2rem); /* Increased padding */
+          box-shadow: 0 12px 24px rgba(0,0,0,.25);
+        }
+
+        .ac__groupHeader {
+          display: flex;
+          align-items: center;
+          gap: 0.8rem; /* Increased gap */
+          margin-bottom: 1.2rem; /* Increased margin */
+          padding-bottom: 0.8rem; /* Added padding bottom */
+          border-bottom: 1px solid var(--border); /* Added separator */
+        }
+        .ac__groupHeader h3 {
+          margin: 0;
+          font-size: 1.08rem;
+          letter-spacing: .2px;
+        }
+        .ac__icon {
+          font-size: 1.1rem;
+          opacity: 0.95;
+          margin-right: 0.2rem;
+        }
+
+        .ac__cards {
+          display: grid;
+          grid-template-columns: repeat(12, 1fr);
+          gap: clamp(1.2rem, 2vw, 1.5rem); /* Increased gap */
+        }
+        @media (min-width: 900px) {
+          .ac__cards > * {
+            grid-column: span 6;
+            min-height: 200px; /* Ensure consistent height */
+          }
+        }
+
+        @media (min-width: 1200px) {
+          .ac__cards > * {
+            grid-column: span 4;
+            min-height: 220px;
+          }
+        }
+        .ac__cards > * {
+          grid-column: span 12;
+        }
+
+        .ac__item {
+          position: relative;
+          background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+          border: 1px solid var(--border);
+          border-radius: 16px;
+          padding: 1.25rem 1.5rem; /* Increased padding */
+          min-height: 180px; /* Slightly taller */
+          overflow: hidden;
+          transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease;
+        }
+        .ac__item:hover {
+          transform: translateY(-3px);
+          border-color: rgba(124,184,255,.35);
+          box-shadow: 0 16px 26px rgba(0,0,0,.32);
+        }
+
+        .ac__date {
+          position: absolute;
+          top: 1rem; /* Increased */
+          right: 1rem; /* Increased */
+          font-size: .82rem;
+          color: var(--muted);
+          background: var(--chip);
+          border: 1px solid var(--border);
+          padding: 0.35rem 0.8rem; /* Increased horizontal padding */
+          border-radius: 999px;
+        }
+
+        .ac__title {
+          margin: 0.2rem 0 0.5rem 0; /* Adjusted margins */
+          font-size: 1.1rem; /* Slightly larger */
+        }
+        .ac__org {
+          margin: 0;
+          color: var(--muted);
+          font-size: .92rem;
+        }
+
+        .ac__desc {
+          margin: 1rem 0; /* Increased margins */
+          color: var(--text);
+          line-height: 1.6;
+        }
+
+        .ac__tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.6rem; /* Increased gap */
+          margin-top: 1rem; /* Added top margin */
+        }
+        .ac__chip {
+          display: inline-flex;
+          align-items: center;
+          padding: 0.4rem 0.8rem; /* Increased padding */
+          border-radius: 999px;
+          border: 1px solid var(--border);
+          background: var(--chip);
+          font-size: .82rem;
+          transition: background .15s ease, transform .15s ease, border-color .15s ease;
+          white-space: nowrap;
+        }
+        .ac__chip:hover {
+          background: var(--chipH);
+          border-color: rgba(124,184,255,.35);
+          transform: translateY(-1px);
+        }
+
+        .ac__actions {
+          display: flex;
+          gap: .6rem;
+          margin-top: .8rem;
+        }
+        .ac__btn {
+          appearance: none;
+          text-decoration: none;
+          border: 1px solid var(--border);
+          background: var(--chip);
+          color: var(--text);
+          padding: .48rem .7rem;
+          border-radius: 10px;
+          font-weight: 600;
+          font-size: .92rem;
+          transition: transform .15s ease, background .15s ease, border-color .15s ease;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .ac__btn:hover {
+          background: var(--chipH);
+          border-color: rgba(124,184,255,.35);
+          transform: translateY(-1px);
+        }
+
+        .ac__empty {
+          color: var(--muted);
+          border: 1px dashed var(--border);
+          background: var(--panel);
+          border-radius: 12px;
+          padding: .9rem;
+          text-align: center;
+        }

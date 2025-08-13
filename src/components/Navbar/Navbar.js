@@ -14,10 +14,13 @@ const Navbar = () => {
 
     return (
         <nav className="navbar">
-            <a href="#hero" className="navbar-brand">Siddharth Paul</a>
+            <a href="/" className="navbar-brand">Siddharth Paul</a>
             <div className={`navbar-links ${isOpen ? 'active' : ''}`}>
-                <a href="#about" onClick={closeMenu}>About</a>
-                <a href="#projects" onClick={closeMenu}>Projects</a>
+                <a href="/" onClick={closeMenu}>Home</a>
+                <a href="/experience" onClick={closeMenu}>My Experience</a>
+                <a href="/projects" onClick={closeMenu}>My Projects</a>
+                <a href="/gallery" onClick={closeMenu}>Gallery</a>
+
                 {/* <a href="#contact" onClick={closeMenu}>Contact</a> */}
 
             </div>

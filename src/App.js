@@ -1,38 +1,35 @@
 import React from 'react';
-import './App.css';
-import Navbar from './components/Navbar/Navbar';
-import Hero from './components/Hero/Hero';
-import About from './components/About/About';
-import Features from './components/Features/Features';
-import Footer from './components/Footer/Footer';
-import Parallax from './components/Parallax/Parallax'
-// import Skills from './components/Skills/Skills';
-import ScrollAnimationComponent from './components/AnimatedScroll/ScrollAnimationComponent';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Home from './pages/Home';
+import Projects from './pages/Projects';
+import ExperiencePage from './pages/ExperiencePage';
+import GalleryPage from './pages/GalleryPage';
+
+// import About from './pages/About';
+// import Contact from './pages/Contact';
+// import Services from './pages/Services';
+// import Blog from './pages/Blog';
+// import NotFound from './pages/NotFound';
+
+
 
 function App() {
-
   return (
-    <div className="App">
+    <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/my-portfolio" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/experience" element={<ExperiencePage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
 
-      <Navbar />
-
-      <Parallax>
-        <Hero />
-        <ScrollAnimationComponent>
-          <About />
-        </ScrollAnimationComponent>
-
-        {/* <Skills /> */}
-        <ScrollAnimationComponent>
-        <Features />
-        </ScrollAnimationComponent>
-
-      </Parallax>
-      {/* <Contact /> */}
-
-      <Footer />
-
-    </div>
+            {/* <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} /> */}
+          </Routes>
+    </Router>
   );
 }
 

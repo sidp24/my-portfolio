@@ -1,0 +1,42 @@
+:root {
+  --text: #e8eef7;
+  --muted: #a8b2c3;
+  --border: rgba(255, 255, 255, 0.12);
+  --accent: #7cf2c6;
+  --accent-2: #7cb8ff;
+  --bg: #0b0f14;
+}
+
+.xp {
+  position: relative;
+  color: var(--text);
+  padding: clamp(3rem, 6vw, 5rem) min(6vw, 3rem);
+}
+
+.xp__header { max-width: 980px; margin: 0 auto 1.5rem; text-align: center; }
+.xp__header h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: clamp(1.9rem, 3vw, 2.4rem);
+  line-height: 1.1;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.xp__header p { margin: 0; color: var(--muted); }
+
+.xp__timeline {
+  max-width: 1080px;
+  margin: 1.5rem auto 0;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: clamp(0.6rem, 1vw, 0.9rem);
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.04));
+  backdrop-filter: blur(6px);
+}
+
+/* Tweak library classes */
+.vertical-timeline-element-date { color: var(--muted); }
+.xp-card-title { margin: 0 0 0.25rem; letter-spacing: 0.2px; }
+.xp-card-subtitle { margin: 0 0 0.5rem; color: var(--muted); font-weight: 500; }
+.xp-card-detail { margin: 0; }

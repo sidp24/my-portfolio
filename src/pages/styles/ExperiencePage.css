@@ -1,0 +1,43 @@
+:root {
+  --bg: #0b0f14;
+  --text: #e8eef7;
+  --muted: #a8b2c3;
+  --accent: #7cf2c6;
+  --accent-2: #7cb8ff;
+}
+
+.ExperiencePage {
+  min-height: 100vh;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(124, 248, 198, 0.12), transparent 60%),
+    radial-gradient(900px 500px at 100% 0%, rgba(124, 184, 255, 0.10), transparent 60%),
+    var(--bg);
+  color: var(--text);
+}
+
+.xp-hero {
+  padding: clamp(2.5rem, 7vw, 5rem) min(6vw, 3rem) 1rem;
+}
+
+.xp-hero__inner {
+  max-width: 1060px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.xp-hero h1 {
+  margin: 0 0 0.6rem 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: 0.2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.xp-hero p {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.7vw, 1.1rem);
+}

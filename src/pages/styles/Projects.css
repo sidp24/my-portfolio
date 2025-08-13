@@ -1,0 +1,52 @@
+:root {
+  --bg: #0b0f14;
+  --card: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.12);
+  --text: #e8eef7;
+  --muted: #a8b2c3;
+  --accent: #7cf2c6;
+  --accent-2: #7cb8ff;
+}
+
+.Projects {
+  min-height: 100vh;
+background:
+  radial-gradient(1200px 600px at 10% -10%, rgba(138, 43, 226, 0.22), transparent 60%),  /* purple glow */
+  radial-gradient(900px 500px at 100% 0%, rgba(156, 163, 175, 0.14), transparent 60%),   /* soft gray wash */
+  var(--bg);
+}
+
+.projects-hero {
+  position: relative;
+  padding: clamp(3rem, 8vw, 6rem) min(6vw, 3rem) 1rem;
+}
+
+.projects-hero__inner {
+  max-width: 1060px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.projects-hero h1 {
+  margin: 0 0 0.6rem 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: 0.2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.projects-hero p {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.7vw, 1.1rem);
+}
+
+/* smooth scroll + custom scrollbar (optional) */
+html {
+  scroll-behavior: smooth;
+}
+
+

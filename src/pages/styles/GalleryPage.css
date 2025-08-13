@@ -1,0 +1,9 @@
+/* src/pages/styles/GalleryPage.css */
+.GalleryPage{
+  min-height: 100vh;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(138,43,226,.22), transparent 60%),
+    radial-gradient(900px 500px at 100% 0%, rgba(156,163,175,.14), transparent 60%),
+    #0f0a1f;
+  color: #e8eef7;
+}
