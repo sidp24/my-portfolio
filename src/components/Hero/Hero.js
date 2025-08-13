@@ -1,40 +1,47 @@
+// src/components/Hero.jsx
 import React, { useEffect, useRef } from "react";
 import "./Hero.css";
 import HeroImage from "../images/pfp.jpg";
-import NET from "vanta/src/vanta.fog";
+import FOG from "vanta/dist/vanta.fog.min";
+import * as THREE from "three";
 import { TypeAnimation } from "react-type-animation";
 
 export default function Hero() {
-  const vantaRef = useRef(null);
+  const containerRef = useRef(null);   // DOM node for Vanta
+  const vantaEffectRef = useRef(null); // Vanta instance
 
   useEffect(() => {
-    // Init Vanta Fog with a purple palette to match the screenshot
-    vantaRef.current = NET({
-      el: "#vanta",
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.0,
-      minWidth: 200.0,
-      highlightColor: 0x8a2be2, // blueviolet
-      midtoneColor: 0x1a146a,   // deep indigo
-      lowlightColor: 0x2e0b44,  // purple
-      baseColor: 0x0d0930,      // near-black purple
-      blurFactor: 0.65,
-      speed: 3.8,
-      zoom: 1.15,
-    });
+    // Guard against double-mount in React StrictMode (dev)
+    if (!vantaEffectRef.current && containerRef.current) {
+      vantaEffectRef.current = FOG({
+        el: containerRef.current,
+        THREE, // pass THREE so Vanta doesn't look for window.THREE
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        highlightColor: 0x8a2be2, // blueviolet
+        midtoneColor: 0x1a146a,   // deep indigo
+        lowlightColor: 0x2e0b44,  // purple
+        baseColor: 0x0d0930,      // near-black purple
+        blurFactor: 0.65,
+        speed: 3.8,
+        zoom: 1.15,
+      });
+    }
 
     return () => {
-      if (vantaRef.current && vantaRef.current.destroy) {
-        vantaRef.current.destroy();
+      if (vantaEffectRef.current) {
+        vantaEffectRef.current.destroy();
+        vantaEffectRef.current = null;
       }
     };
   }, []);
 
   return (
     <div id="hero">
-      <div className="bg" id="vanta">
+      <div className="bg" ref={containerRef}>
         {/* subtle gradient overlay to deepen colors like the screenshot */}
         <div className="hero-overlay" />
         <section className="hero">
