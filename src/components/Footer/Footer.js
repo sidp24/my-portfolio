@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Footer.css";
 
 export default function Footer() {
@@ -41,10 +42,28 @@ export default function Footer() {
 
         {/* Quick Nav */}
         <nav className="footer__nav" aria-label="Footer navigation">
-          <a className="footer__navLink" href="#hero">Home</a>
-          <a className="footer__navLink" href="#about">About</a>
-          <a className="footer__navLink" href="/projects">Projects</a>
-          <a className="footer__navLink" href="/experience">Experience</a>
+          <a 
+            className="footer__navLink" 
+            href="#hero"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+          >
+            Home
+          </a>
+          <a 
+            className="footer__navLink" 
+            href="#about"
+            onClick={(e) => {
+              e.preventDefault();
+              document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
+            About
+          </a>
+          <Link className="footer__navLink" to="/projects">Projects</Link>
+          <Link className="footer__navLink" to="/experience">Experience</Link>
         </nav>
 
         {/* Social + Actions */}

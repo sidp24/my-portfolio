@@ -73,7 +73,7 @@ const projects = [
     id: 6,
     title: "Holobrain",
     description:
-      "Hackathon repo (Python). Codebase for a HackRU build; scripts and app skeleton included (no README, description inferred).",
+      "Hackathon repo (Python). Codebase for a HackRU build; scripts and app skeleton included.",
     image: holo,
     link: "https://github.com/sidp24/HackRU",
     repo: "https://github.com/sidp24/HackRU",
@@ -118,7 +118,7 @@ const projects = [
     id: 10,
     title: "BomBot2022",
     description:
-      "FRC robot code (Java/WPILib) for the 2022 season. Standard Gradle/WPILib structure (repo lacks README; description inferred).",
+      "FRC robot code (Java/WPILib) for the 2022 season. Standard Gradle/WPILib structure.",
     image: batt,
     link: "https://github.com/sidp24/BomBot2022",
     repo: "https://github.com/sidp24/BomBot2022",

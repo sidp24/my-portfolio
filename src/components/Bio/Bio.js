@@ -38,11 +38,11 @@ export default function Bio() {
           </p>
 
           <p className="about__para">
-            Outside of work, you’ll catch me pushing limits in the gym, jamming
-            on my guitar, and getting lost in the music of{" "}
+            Outside of work, you’ll catch me in the gym, jamming
+            on my guitar, and listening to {" "}
             <strong>Pink Floyd</strong> and <strong>The Beatles</strong>. I
-            tinker with <strong>robotics</strong> whenever I can and make time
-            for friends—exploring new spots or just good conversation.
+            mess around with <strong>robotics</strong> whenever I can and make time
+            for friends, exploring on a late night drive or finding new spots for food.
           </p>
 
           {/* Highlight stats */}

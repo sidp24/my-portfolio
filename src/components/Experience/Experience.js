@@ -29,12 +29,20 @@ const defaultItems = [
       "Architected a platform to surface third-party software dependencies across 200+ apps. Automated GitHub metadata parsing with Python; built dashboards with Ruby on Rails, Smashing, and Node.js; integrated CI/CD and reporting.",
   },
   {
+    title: "September 2023",
+    cardTitle: "President — FRC Team 7587",
+    cardSubtitle: "FIRST Robotics Competition",
+    cardDetailedText:
+      "Directed team strategy, fundraising, and outreach while overseeing build, programming, and competition preparation. Fostered collaboration across subteams to deliver a competitive robot and strong community presence.",
+  },
+  {
     title: "Aug 2023",
     cardTitle: "edWeb — Keynote Speaker",
     cardSubtitle: "AI + Student Well-Being",
     cardDetailedText:
       "Presented how Myndful.AI addresses gaps in school mental health resources. Shared UX principles for student-friendly chat interfaces and discussed AI’s role in education support.",
   },
+
   {
     title: "May 2023",
     cardTitle: "iCode Bridgewater — Camp Lead",
@@ -48,6 +56,13 @@ const defaultItems = [
     cardSubtitle: "Award by Rep. Frank Pallone",
     cardDetailedText:
       "Recognized for impact in destigmatizing mental health using accessible conversational AI. Praised for innovation and community value.",
+  },
+  {
+    title: "September 2022",
+    cardTitle: "Programming Lead — FRC Team 7586",
+    cardSubtitle: "FIRST Robotics Competition",
+    cardDetailedText:
+      "Led the software team in developing autonomous and driver-assist features for competition robots using Java and WPILib. Integrated vision processing and optimized control loops for reliability.",
   },
   {
     title: "Aug 2022",

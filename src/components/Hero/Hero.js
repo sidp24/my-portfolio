@@ -1,5 +1,6 @@
 // src/components/Hero.jsx
 import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom"; // Add this import
 import "./Hero.css";
 import HeroImage from "../images/pfp.jpg";
 import FOG from "vanta/dist/vanta.fog.min";
@@ -69,8 +70,19 @@ export default function Hero() {
               </div>
 
               <div className="cta-buttons">
-                <a href="/projects" className="cta-primary">View My Work</a>
-                <a href="#about" className="cta-secondary">About Me</a>
+                <Link to="/projects" className="cta-primary">View My Work</Link>
+                <a 
+                  href="#about" 
+                  className="cta-secondary"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.querySelector('#about').scrollIntoView({ 
+                      behavior: 'smooth' 
+                    });
+                  }}
+                >
+                  About Me
+                </a>
               </div>
             </div>
 
