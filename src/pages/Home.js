@@ -17,13 +17,25 @@ function Home() {
         <Navbar />
         <Parallax>
           <Hero />
-          <br /><br /><br /><br />
+          <br />
+          <br />
+          <br />
+          <br />
           <Bio />
-          <br /><br /><br /><br />
+          <br />
+          <br />
+          <br />
+          <br />
           <Skills />
-          <br /><br /><br /><br />
+          <br />
+          <br />
+          <br />
+          <br />
           <Coursework />
-          <br /><br /><br /><br />
+          <br />
+          <br />
+          <br />
+          <br />
         </Parallax>
         <Footer />
       </div>

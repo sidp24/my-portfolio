@@ -113,7 +113,7 @@ export default function Bio() {
             <div className="card__body measure">
               <p>
                 You’ll find me in the gym, on guitar, or grooving to{" "}
-                <strong>Pink Floyd</strong> and <strong>The Beatles</strong>. I
+                <strong>Pink Floyd</strong> and <strong>The Beatles</strong>. Besides that, I
                 tinker with <strong>robotics</strong> and make time for friends,
                  late-night drives and new food spots included.
               </p>
