@@ -11,7 +11,7 @@ export default function PageLoader({
   const [visible, setVisible] = useState(true);
   const progressRef = useRef(0);
 
-  // Simulated progress while real tasks complete (feels lively)
+  // Simulated progress while real tasks complete 
   useEffect(() => {
     if (!visible) return;
     const id = setInterval(() => {

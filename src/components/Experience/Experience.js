@@ -28,13 +28,7 @@ const defaultItems = [
     cardDetailedText:
       "Architected a platform to surface third-party software dependencies across 200+ apps. Automated GitHub metadata parsing with Python; built dashboards with Ruby on Rails, Smashing, and Node.js; integrated CI/CD and reporting.",
   },
-  {
-    title: "September 2023",
-    cardTitle: "President — FRC Team 7587",
-    cardSubtitle: "FIRST Robotics Competition",
-    cardDetailedText:
-      "Directed team strategy, fundraising, and outreach while overseeing build, programming, and competition preparation. Fostered collaboration across subteams to deliver a competitive robot and strong community presence.",
-  },
+
   {
     title: "Aug 2023",
     cardTitle: "edWeb — Keynote Speaker",
@@ -59,10 +53,10 @@ const defaultItems = [
   },
   {
     title: "September 2022",
-    cardTitle: "Programming Lead — FRC Team 7586",
+    cardTitle: "President — FRC Team 7587",
     cardSubtitle: "FIRST Robotics Competition",
     cardDetailedText:
-      "Led the software team in developing autonomous and driver-assist features for competition robots using Java and WPILib. Integrated vision processing and optimized control loops for reliability.",
+      "Directed team strategy, fundraising, and outreach while overseeing build, programming, and competition preparation. Fostered collaboration across subteams to deliver a competitive robot and strong community presence.",
   },
   {
     title: "Aug 2022",
@@ -70,6 +64,13 @@ const defaultItems = [
     cardSubtitle: "AI mental health chatbot for students",
     cardDetailedText:
       "Built an ML-powered mental health chatbot for adolescents. Implemented a TensorFlow Sequential (3-layer dense) model and shipped a responsive React frontend. Deployed custom school sites and led rollouts across multiple districts.",
+  },
+  {
+    title: "September 2021",
+    cardTitle: "Programming Lead — FRC Team 7586",
+    cardSubtitle: "FIRST Robotics Competition",
+    cardDetailedText:
+      "Led the software team in developing autonomous and driver-assist features for competition robots using Java and WPILib. Integrated vision processing and optimized control loops for reliability.",
   },
   {
     title: "Aug 2021",

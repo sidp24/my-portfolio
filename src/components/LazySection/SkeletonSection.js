@@ -1,4 +1,3 @@
-// src/components/Skeleton/SectionSkeleton.jsx
 import React from "react";
 
 export default function SectionSkeleton({ title = "Loading..." }) {

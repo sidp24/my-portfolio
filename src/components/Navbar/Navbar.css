@@ -30,7 +30,6 @@
   color: #d0bfeb;
   text-shadow: 0 0 20px #ffffff;
   transform: scale(1.02);
-
 }
 
 .navbar-brand a:before {
@@ -47,7 +46,6 @@
 
 .navbar-brand a:hover:before {
   width: 100%;
-
 }
 
 .navbar-brand a:hover {
@@ -70,9 +68,6 @@
   padding: 0.5rem 1rem;
   position: relative;
   transition: color 0.3s ease, transform 0.3s ease;
-
-
-
 }
 
 .navbar-links a:before {
@@ -106,8 +101,7 @@
 .hamburger div {
   width: 30px;
   height: 3px;
-  background-color: rgba(255, 255, 0, 0.6);
-  ;
+  background-color: rgba(247, 234, 252, 0.6);
   margin: 5px;
   transition: all 0.3s ease;
 }

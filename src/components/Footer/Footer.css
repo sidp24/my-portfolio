@@ -1,23 +1,29 @@
-:root{
-  --bg: #0f0a1f;              /* deep purple base */
+:root {
+  --bg: #0f0a1f; /* deep purple base */
   --text: #f6f6f6;
   --muted: #bfc6d4;
-  --border: rgba(255,255,255,0.14);
-  --panel: rgba(255,255,255,0.06);
-  --panel-2: rgba(255,255,255,0.1);
+  --border: rgba(255, 255, 255, 0.14);
+  --panel: rgba(255, 255, 255, 0.06);
+  --panel-2: rgba(255, 255, 255, 0.1);
   --accent: #7cf2c6;
   --accent-2: #7cb8ff;
-  --linkedin: #0A66C2;
+  --linkedin: #0a66c2;
   --github: #0d1117;
   --devpost: #00aeef;
   --email: #6c5ce7;
 }
 
-/* Background: purple + gray, matches your site vibe */
-.footer{
-  background:
-    radial-gradient(1200px 600px at 10% -10%, rgba(138, 43, 226, 0.22), transparent 60%),
-    radial-gradient(900px 500px at 100% 0%, rgba(156, 163, 175, 0.14), transparent 60%),
+.footer {
+  background: radial-gradient(
+      1200px 600px at 10% -10%,
+      rgba(138, 43, 226, 0.22),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 500px at 100% 0%,
+      rgba(156, 163, 175, 0.14),
+      transparent 60%
+    ),
     var(--bg);
   color: var(--text);
   padding: 2.5rem min(6vw, 2.5rem) 1.5rem;
@@ -25,7 +31,7 @@
   margin-top: 2rem;
 }
 
-.footer__inner{
+.footer__inner {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
@@ -35,11 +41,11 @@
   padding-bottom: 2rem;
 }
 
-.footer__brand{
+.footer__brand {
   display: grid;
   gap: 0.5rem;
 }
-.footer__name{
+.footer__name {
   margin: 0;
   font-size: 1.25rem;
   letter-spacing: 0.3px;
@@ -49,20 +55,20 @@
   color: transparent;
   font-weight: 600;
 }
-.footer__copy{
+.footer__copy {
   margin: 0;
   color: var(--muted);
   font-size: 0.95rem;
   letter-spacing: 0.2px;
 }
 
-.footer__nav{
+.footer__nav {
   display: flex;
   flex-wrap: wrap;
   gap: 1.2rem 1.5rem;
   justify-content: center;
 }
-.footer__navLink{
+.footer__navLink {
   color: var(--text);
   text-decoration: none;
   font-size: 1rem;
@@ -72,27 +78,27 @@
   transition: all 0.2s ease;
   position: relative;
 }
-.footer__navLink:hover{
+.footer__navLink:hover {
   background: var(--panel);
   border-color: var(--border);
   transform: translateY(-1px);
 }
 
-.footer__actions{
+.footer__actions {
   display: flex;
   align-items: center;
-  gap: .6rem;
+  gap: 0.6rem;
   justify-content: flex-end;
 }
 
 /* Social icons – favicon style */
-.footer__icons{
+.footer__icons {
   display: flex;
   gap: 0.8rem;
   padding: 0.5rem 0;
 }
 
-.icon{
+.icon {
   width: 42px;
   height: 42px;
   min-width: 42px;
@@ -104,42 +110,65 @@
   background: var(--panel);
   color: var(--text);
   font-weight: 800;
-  letter-spacing: .2px;
+  letter-spacing: 0.2px;
   text-decoration: none;
-  transition: transform .15s ease, background .15s ease, box-shadow .15s ease, border-color .15s ease, color .15s ease;
+  transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease,
+    border-color 0.15s ease, color 0.15s ease;
   cursor: pointer;
   user-select: none;
 }
-.icon:hover{
+.icon:hover {
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(93,55,255,.25);
-  border-color: rgba(124,184,255,.35);
+  box-shadow: 0 8px 24px rgba(93, 55, 255, 0.25);
+  border-color: rgba(124, 184, 255, 0.35);
   background: var(--panel-2);
 }
 
 /* Service-specific accents */
-.icon--linkedin{ background: var(--panel); }
-.icon--linkedin:hover{ background: linear-gradient(180deg, var(--panel-2), rgba(10,102,194,.25)); color: #fff; }
-
-.icon--github{ background: var(--panel); }
-.icon--github:hover{ background: linear-gradient(180deg, var(--panel-2), rgba(13,17,23,.55)); }
-
-.icon--devpost{
+.icon--linkedin {
   background: var(--panel);
-  clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%); /* hexagon look */
 }
-.icon--devpost span{ transform: translateY(-1px); }
-.icon--devpost:hover{ background: linear-gradient(180deg, var(--panel-2), rgba(0,174,239,.35)); }
+.icon--linkedin:hover {
+  background: linear-gradient(180deg, var(--panel-2), rgba(10, 102, 194, 0.25));
+  color: #fff;
+}
 
-.icon--email:hover{ background: linear-gradient(180deg, var(--panel-2), rgba(108,92,231,.35)); }
+.icon--github {
+  background: var(--panel);
+}
+.icon--github:hover {
+  background: linear-gradient(180deg, var(--panel-2), rgba(13, 17, 23, 0.55));
+}
 
-.icon.is-copied{
-  box-shadow: 0 0 0 2px rgba(124,242,198,.55);
+.icon--devpost {
+  background: var(--panel);
+  clip-path: polygon(
+    25% 0,
+    75% 0,
+    100% 50%,
+    75% 100%,
+    25% 100%,
+    0 50%
+  ); /* hexagon look */
+}
+.icon--devpost span {
+  transform: translateY(-1px);
+}
+.icon--devpost:hover {
+  background: linear-gradient(180deg, var(--panel-2), rgba(0, 174, 239, 0.35));
+}
+
+.icon--email:hover {
+  background: linear-gradient(180deg, var(--panel-2), rgba(108, 92, 231, 0.35));
+}
+
+.icon.is-copied {
+  box-shadow: 0 0 0 2px rgba(124, 242, 198, 0.55);
   color: #fff;
 }
 
 /* Back to top button */
-.backToTop{
+.backToTop {
   width: 40px;
   height: 40px;
   border-radius: 12px;
@@ -148,16 +177,17 @@
   color: var(--text);
   font-weight: 900;
   cursor: pointer;
-  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+  transition: transform 0.15s ease, background 0.15s ease,
+    border-color 0.15s ease;
 }
-.backToTop:hover{
+.backToTop:hover {
   transform: translateY(-1px);
   background: var(--panel-2);
-  border-color: rgba(124,184,255,.35);
+  border-color: rgba(124, 184, 255, 0.35);
 }
 
 /* Subline */
-.footer__subline{
+.footer__subline {
   max-width: 1200px;
   margin: 0 auto;
   color: var(--muted);
@@ -169,29 +199,29 @@
   padding-top: 1.2rem;
   border-top: 1px solid var(--border);
 }
-.footer__subline .dot{
-  width: .55rem;
-  height: .55rem;
+.footer__subline .dot {
+  width: 0.55rem;
+  height: 0.55rem;
   border-radius: 999px;
   background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  box-shadow: 0 0 16px rgba(124,184,255,.55);
+  box-shadow: 0 0 16px rgba(124, 184, 255, 0.55);
 }
 
 /* Mobile */
-@media (max-width: 900px){
-  .footer__inner{
+@media (max-width: 900px) {
+  .footer__inner {
     grid-template-columns: 1fr;
     gap: 2rem;
     text-align: center;
     padding-bottom: 1.5rem;
   }
-  .footer__actions{
+  .footer__actions {
     justify-content: center;
   }
   .footer__nav {
     gap: 1rem;
   }
-  .footer{
+  .footer {
     padding: 2rem min(6vw, 2rem) 1.2rem;
   }
 }

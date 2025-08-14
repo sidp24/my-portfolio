@@ -22,10 +22,10 @@ body {
 
 .Projects {
   min-height: 100vh;
-background:
-  radial-gradient(1200px 600px at 10% -10%, rgba(138, 43, 226, 0.22), transparent 60%),  /* purple glow */
-  radial-gradient(900px 500px at 100% 0%, rgba(156, 163, 175, 0.14), transparent 60%),   /* soft gray wash */
-  var(--bg);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(138, 43, 226, 0.22), transparent 60%),
+    radial-gradient(900px 500px at 100% 0%, rgba(156, 163, 175, 0.14), transparent 60%),
+    var(--bg);
 }
 
 .projects-hero {
@@ -41,19 +41,39 @@ background:
 
 .projects-hero h1 {
   margin: 0 0 0.6rem 0;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2rem, 8vw, 3rem); /* Increase scaling for mobile */
   line-height: 1.1;
   letter-spacing: 0.2px;
   background: linear-gradient(90deg, var(--accent), var(--accent-2));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  word-break: break-word; /* Prevent overflow */
 }
 
 .projects-hero p {
   margin: 0;
   color: var(--muted);
-  font-size: clamp(1rem, 1.7vw, 1.1rem);
+  font-size: clamp(1rem, 4vw, 1.1rem); /* Increase scaling for mobile */
+  word-break: break-word;
+}
+
+/* Mobile-specific tweaks */
+@media (max-width: 600px) {
+
+  .projects-hero {
+    padding: 2rem 0.5rem 1rem;
+  }
+  .projects-hero__inner {
+    padding: 0;
+  }
+  .projects-hero h1 {
+    font-size: 2rem;
+    padding-top: 10vh;
+  }
+  .projects-hero p {
+    font-size: 1rem;
+  }
 }
 
 /* smooth scroll + custom scrollbar (optional) */

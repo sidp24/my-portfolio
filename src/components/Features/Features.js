@@ -124,7 +124,7 @@ const projects = [
     repo: "https://github.com/sidp24/BomBot2022",
     tags: ["Robotics"],
     tech: ["Java", "WPILib", "Gradle"],
-  }, 
+  },
 ];
 
 // Visible filters on the page
@@ -139,7 +139,7 @@ const FILTERS = [
   "Tooling",
   "Controls",
   "Backtesting",
-  "Quant"
+  "Quant",
 ];
 
 export default function Features() {

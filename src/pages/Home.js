@@ -8,7 +8,6 @@ import Coursework from "../components/Coursework/Coursework";
 import Footer from "../components/Footer/Footer";
 import Parallax from "../components/Parallax/Parallax";
 import PageLoader from "../components/LoadingScreen/PageLoader";
-// Optional: import hero image to preload
 import HeroImage from "../components/images/sid.jpg";
 
 function Home() {

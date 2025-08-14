@@ -4,42 +4,44 @@ import { faTrophy } from "@fortawesome/free-solid-svg-icons";
 import "./Awards.css";
 
 const defaultAwards = [
-	{
-		title: "Multiple National Hackathon Wins (2022–2024)",
-		org: "HackRU, MontyHack, RidgeHacks",
-		date: "2022–2024",
-		tags: ["Hackathon", "Full-Stack", "AI/ML"],
-		description:
-			"Won 1st Place at HackRU Fall 2024 for Holobrain, a gesture-controlled 3D MRI diagnostic tool with CNN-based anomaly detection. Secured Best Use of AI at MontyHack 2022 and 1st Place at RidgeHacks 2022 and HackMCST for innovative full-stack and AI-driven solutions.",
-		link: "https://devpost.com/sidp24", // You could link to your Devpost profile
-	},
-	{
-		title: "VEXU Worlds — Top 25 Globally",
-		org: "VEX Robotics World Championship",
-		date: "May 2025",
-		tags: ["Robotics", "Team Lead"],
-		description:
-			"Led build efforts for Rutgers IEEE-VEXU; optimized reliability and performance through iterative design and testing.",
-		link: "https://www.vexrobotics.com/competition",
-	},
-	{
-		title: "Congressional App Challenge — 1st Place",
-		org: "U.S. House of Representatives (Rep. Frank Pallone)",
-		date: "Dec 2022",
-		tags: ["Impact", "AI/ML"],
-		description:
-			"Recognized for building an accessible ML-powered mental health resource that helps destigmatize student support.",
-		link: "https://www.congressionalappchallenge.us/",
-	}
+  {
+    title: "Multiple National Hackathon Wins (2022–2024)",
+    org: "HackRU, MontyHack, RidgeHacks",
+    date: "2022–2024",
+    tags: ["Hackathon", "Full-Stack", "AI/ML"],
+    description:
+      "Won 1st Place at HackRU Fall 2024 for Holobrain, a gesture-controlled 3D MRI diagnostic tool with CNN-based anomaly detection. Secured Best Use of AI at MontyHack 2022 and 1st Place at RidgeHacks 2022 and HackMCST for innovative full-stack and AI-driven solutions.",
+    link: "https://devpost.com/sidp24", 
+  },
+  {
+    title: "VEXU Worlds — Top 25 Globally",
+    org: "VEX Robotics World Championship",
+    date: "May 2025",
+    tags: ["Robotics", "Team Lead"],
+    description:
+      "Led build efforts for Rutgers IEEE-VEXU; optimized reliability and performance through iterative design and testing.",
+    link: "https://www.vexrobotics.com/competition",
+  },
+  {
+    title: "Congressional App Challenge — 1st Place",
+    org: "U.S. House of Representatives (Rep. Frank Pallone)",
+    date: "Dec 2022",
+    tags: ["Impact", "AI/ML"],
+    description:
+      "Recognized for building an accessible ML-powered mental health resource that helps destigmatize student support.",
+    link: "https://www.congressionalappchallenge.us/",
+  },
 ];
-
 
 export default function AwardsCerts({ awards = defaultAwards }) {
   return (
     <section id="awards" className="ac">
       <div className="ac__header">
         <h2>Awards &amp; Certifications</h2>
-        <p>My highlights from my learning journey: wins, credentials, and moments I’m proud of.</p>
+        <p>
+          My highlights from my learning journey: wins, credentials, and moments
+          I’m proud of.
+        </p>
       </div>
 
       <div className="ac__grid">

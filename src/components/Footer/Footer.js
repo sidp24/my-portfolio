@@ -5,7 +5,7 @@ import "./Footer.css";
 export default function Footer() {
   const [copied, setCopied] = useState(false);
 
-  const email = "siddharth.paul@rutgers.edu"; 
+  const email = "siddharth.paul@rutgers.edu";
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -42,8 +42,8 @@ export default function Footer() {
 
         {/* Quick Nav */}
         <nav className="footer__nav" aria-label="Footer navigation">
-          <a 
-            className="footer__navLink" 
+          <a
+            className="footer__navLink"
             href="#hero"
             onClick={(e) => {
               e.preventDefault();
@@ -52,18 +52,24 @@ export default function Footer() {
           >
             Home
           </a>
-          <a 
-            className="footer__navLink" 
+          <a
+            className="footer__navLink"
             href="#about"
             onClick={(e) => {
               e.preventDefault();
-              document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
+              document
+                .querySelector("#about")
+                .scrollIntoView({ behavior: "smooth" });
             }}
           >
             About
           </a>
-          <Link className="footer__navLink" to="/projects">Projects</Link>
-          <Link className="footer__navLink" to="/experience">Experience</Link>
+          <Link className="footer__navLink" to="/projects">
+            Projects
+          </Link>
+          <Link className="footer__navLink" to="/experience">
+            Experience
+          </Link>
         </nav>
 
         {/* Social + Actions */}

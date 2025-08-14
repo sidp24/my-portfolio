@@ -15,7 +15,6 @@
   overflow: hidden;
 }
 
-/* Deepen the purple and add a soft vignette like your screenshot */
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -121,7 +120,6 @@
   transform: translateY(-1px);
 }
 
-/* Photo frame with purple glow/shadow like your screenshot */
 .hero-media {
   display: flex;
   justify-content: center;
