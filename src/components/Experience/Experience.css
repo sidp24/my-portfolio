@@ -62,3 +62,14 @@
 .xp-card-detail {
   margin: 0;
 }
+.xp__reverseBtn {
+  display: block;
+  margin: 0 auto 2rem auto;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: var(--ink);
+}
+
+.xp__reverseBtn:hover {
+  background: linear-gradient(90deg, #22a6b3, #005866);
+  transform: translateY(-2px);
+}

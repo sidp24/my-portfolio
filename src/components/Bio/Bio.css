@@ -216,7 +216,7 @@
   padding: 1.2rem 1.2rem;
   border-radius: 12px;
   text-decoration: none;
-  color: #241f29;
+  color: #ffffff;
   background: linear-gradient(180deg, #7cf2c6, #64e6ff);
   font-weight: 700;
   box-shadow: 0 4px 24px rgba(124, 242, 198, 0.25);
@@ -227,7 +227,7 @@
 
 .about__resumeBtn:hover {
   transform: translateY(-1px);
-  background: linear-gradient(180deg, #aafddf, #90ecff);
-  color: #635570;
+  background: linear-gradient(90deg, #22a6b3, #005866);
+  color: #ffffff;
   box-shadow: 0 6px 28px rgba(124, 242, 198, 0.32);
 }

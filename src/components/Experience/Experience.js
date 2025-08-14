@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
+import { motion, AnimatePresence } from "framer-motion";
 import "react-vertical-timeline-component/style.min.css";
 import "./Experience.css";
 
@@ -82,35 +83,68 @@ const defaultItems = [
 ];
 
 export default function Experience({ items = defaultItems }) {
+  const [reversed, setReversed] = useState(false);
+
+  const handleReverse = () => setReversed((prev) => !prev);
+
+  const timelineItems = reversed ? [...items].reverse() : items;
+
   return (
     <section id="experience" className="xp">
       <div className="xp__timeline">
-        <VerticalTimeline lineColor="var(--border)">
-          {items.map((it, idx) => (
-            <VerticalTimelineElement
-              key={idx}
-              date={it.title}
-              contentStyle={{
-                background: "rgba(255,255,255,0.06)",
-                color: "var(--text)",
-              }}
-              contentArrowStyle={{
-                borderRight: "6px solid rgba(255,255,255,0.06)",
-              }}
-              iconStyle={{
-                // keep the brand gradient, but sizing & ring are handled in CSS for consistency
-                background:
-                  "linear-gradient(135deg, var(--accent), var(--accent-2))",
-                color: "#0b0f14",
-                boxShadow: "none",
-              }}
-            >
-              <h3 className="xp-card-title">{it.cardTitle}</h3>
-              <h4 className="xp-card-subtitle">{it.cardSubtitle}</h4>
-              <p className="xp-card-detail">{it.cardDetailedText}</p>
-            </VerticalTimelineElement>
-          ))}
-        </VerticalTimeline>
+        <button
+          className="xp__reverseBtn"
+          onClick={handleReverse}
+          style={{
+            padding: "0.7rem 1.4rem",
+            borderRadius: "999px",
+            color: "#ffffffff",
+            fontWeight: 600,
+            fontSize: "1rem",
+            border: "none",
+            cursor: "pointer",
+            boxShadow: "0 2px 12px rgba(124, 242, 198, 0.08)",
+            transition: "background 0.2s, color 0.2s",
+            margin: "0 auto 2rem auto",
+          }}
+        >
+          {reversed ? "Show Newest First" : "Show Oldest First"}
+        </button>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={reversed ? "reversed" : "normal"}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+          >
+            <VerticalTimeline lineColor="var(--border)">
+              {timelineItems.map((it, idx) => (
+                <VerticalTimelineElement
+                  key={idx}
+                  date={it.title}
+                  contentStyle={{
+                    background: "rgba(255,255,255,0.06)",
+                    color: "var(--text)",
+                  }}
+                  contentArrowStyle={{
+                    borderRight: "6px solid rgba(255,255,255,0.06)",
+                  }}
+                  iconStyle={{
+                    background:
+                      "linear-gradient(135deg, var(--accent), var(--accent-2))",
+                    color: "#0b0f14",
+                    boxShadow: "none",
+                  }}
+                >
+                  <h3 className="xp-card-title">{it.cardTitle}</h3>
+                  <h4 className="xp-card-subtitle">{it.cardSubtitle}</h4>
+                  <p className="xp-card-detail">{it.cardDetailedText}</p>
+                </VerticalTimelineElement>
+              ))}
+            </VerticalTimeline>
+          </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   );

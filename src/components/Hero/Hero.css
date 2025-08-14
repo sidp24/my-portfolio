@@ -102,12 +102,12 @@
 }
 
 .cta-primary {
-  background-color: var(--teal);
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
   color: var(--ink);
 }
 .cta-primary:hover {
-  background-color: var(--teal-dark);
-  transform: translateY(-1px);
+  background: linear-gradient(90deg, #22a6b3, #005866);
+  transform: translateY(-2px);
 }
 
 .cta-secondary {
