@@ -112,7 +112,7 @@ export default function Bio() {
             <h3 className="card__title">Outside the editor</h3>
             <div className="card__body measure">
               <p>
-                You’ll find me in the gym, on guitar, and deep into{" "}
+                You’ll find me in the gym, on guitar, or grooving to{" "}
                 <strong>Pink Floyd</strong> and <strong>The Beatles</strong>. I
                 tinker with <strong>robotics</strong> and make time for friends,
                  late-night drives and new food spots included.
