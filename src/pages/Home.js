@@ -9,37 +9,43 @@ import Footer from "../components/Footer/Footer";
 import Parallax from "../components/Parallax/Parallax";
 import PageLoader from "../components/LoadingScreen/PageLoader";
 import HeroImage from "../components/images/sid.jpg";
+import Awards from "../components/Awards/Awards";
 
 function Home() {
   return (
-    <PageLoader preloadImages={[HeroImage]} text="Warming up the page…">
-      <div className="Home">
-        <Navbar />
-        <Parallax>
-          <Hero />
-          <br />
-          <br />
-          <br />
-          <br />
-          <Bio />
-          <br />
-          <br />
-          <br />
-          <br />
-          <Skills />
-          <br />
-          <br />
-          <br />
-          <br />
-          <Coursework />
-          <br />
-          <br />
-          <br />
-          <br />
-        </Parallax>
-        <Footer />
-      </div>
-    </PageLoader>
+    // <PageLoader preloadImages={[HeroImage]} text="Warming up the page…">
+    <div className="Home">
+      <Navbar />
+      <Parallax>
+        <Hero />
+        <br />
+        <br />
+        <br />
+        <br />
+        <Bio />
+        <br />
+        <br />
+        <br />
+        <br />
+        <Skills />
+        <br />
+        <br />
+        <br />
+        <br />
+        <Coursework />
+        <br />
+        <br />
+        <br />
+        <br />
+        <Awards />
+        <br />
+        <br />
+        <br />
+        <br />
+      </Parallax>
+      <Footer />
+    </div>
+    // </PageLoader>
   );
 }
 

@@ -20,7 +20,7 @@ const Navbar = () => {
                 <Link to="/" onClick={closeMenu}>Home</Link>
                 <Link to="/experience" onClick={closeMenu}>My Experience</Link>
                 <Link to="/projects" onClick={closeMenu}>My Projects</Link>
-                <Link to="/gallery" onClick={closeMenu}>Gallery</Link>
+                {/* <Link to="/gallery" onClick={closeMenu}>Gallery</Link> */}
 
                 {/* <Link to="/contact" onClick={closeMenu}>Contact</Link> */}
 

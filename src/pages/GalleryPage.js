@@ -8,7 +8,7 @@ const Gallery = React.lazy(() => import("../components/Gallery/Gallery"));
 
 export default function GalleryPage() {
   return (
-    <Loader text="Knock Knock">
+    // <Loader text="Knock Knock">
     <div className="GalleryPage">
       <Navbar />
       <Suspense fallback={<div className="page-loader">Loading gallery…</div>}>
@@ -16,6 +16,5 @@ export default function GalleryPage() {
       </Suspense>
       <Footer />
     </div>
-    </Loader>
   );
 }

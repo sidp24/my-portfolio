@@ -113,9 +113,9 @@ export default function Bio() {
             <div className="card__body measure">
               <p>
                 You’ll find me in the gym, on guitar, or grooving to{" "}
-                <strong>Pink Floyd</strong> and <strong>The Beatles</strong>. Besides that, I
-                tinker with <strong>robotics</strong> and make time for friends,
-                 late-night drives and new food spots included.
+                <strong>Pink Floyd</strong> and <strong>The Beatles</strong>.
+                Besides that, I tinker with <strong>robotics</strong> and make
+                time for friends, late-night drives and new food spots included.
               </p>
             </div>
           </motion.article>
@@ -123,8 +123,8 @@ export default function Bio() {
 
         <div className="about__resume">
           <a
-            href="/SiddharthPaulResume.pdf"
-            download
+            href={`${process.env.PUBLIC_URL}/SiddharthPaulResume.pdf`}
+            download="Siddharth_Paul_Resume.pdf"
             className="about__resumeBtn"
             aria-label="Download Resume"
           >

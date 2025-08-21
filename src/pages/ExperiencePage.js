@@ -7,26 +7,25 @@ import PageLoader from "../components/LoadingScreen/PageLoader";
 
 export default function ExperiencePage() {
   return (
-    <PageLoader>
-      <div className="ExperiencePage">
-        <Navbar />
+    // <PageLoader>
+    <div className="ExperiencePage">
+      <Navbar />
 
-        <header className="xp-hero">
-          <div className="xp-hero__inner">
-            <h1>Experience</h1>
-            <p>
-              From mentoring new coders to building production dashboards and
-              leading robotics, here’s the journey so far.
-            </p>
-          </div>
-        </header>
+      <header className="xp-hero">
+        <div className="xp-hero__inner">
+          <h1>Experience</h1>
+          <p>
+            From mentoring new coders to building production dashboards and
+            leading robotics, here’s the journey so far.
+          </p>
+        </div>
+      </header>
 
-        <main>
-          <Experience />
-        </main>
+      <main>
+        <Experience />
+      </main>
 
-        <Footer />
-      </div>
-    </PageLoader>
+      <Footer />
+    </div>
   );
 }

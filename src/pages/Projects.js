@@ -5,36 +5,36 @@ import Footer from "../components/Footer/Footer";
 import Parallax from "../components/Parallax/Parallax";
 import PageLoader from "../components/LoadingScreen/PageLoader";
 // Lazy-load the Features grid if it renders lots of cards/images
-import batts from "../components/images/batt.jpg";
-import board from "../components/images/board.JPG";
-import dummyboard from "../components/images/dummyboard.jpg";
-import DVD from "../components/images/DVD.png";
-import elevator from "../components/images/elevator.jpeg";
-import holo from "../components/images/holo.jpg";
-import myndful from "../components/images/myndful.png";
-import portfolio from "../components/images/portfolio.png";
-import stat from "../components/images/stat.png";
-import vex from "../components/images/vex.JPG";
+// import batts from "../components/images/batt.jpg";
+// import board from "../components/images/board.JPG";
+// import dummyboard from "../components/images/dummyboard.jpg";
+// import DVD from "../components/images/DVD.png";
+// import elevator from "../components/images/elevator.jpeg";
+// import holo from "../components/images/holo.jpg";
+// import myndful from "../components/images/myndful.png";
+// import portfolio from "../components/images/portfolio.png";
+// import stat from "../components/images/stat.png";
+// import vex from "../components/images/vex.JPG";
 
 const Features = React.lazy(() => import("../components/Features/Features"));
 
 export default function Projects() {
   return (
-    <PageLoader
-      preloadImages={[
-        batts,
-        board,
-        dummyboard,
-        DVD,
-        elevator,
-        holo,
-        myndful,
-        portfolio,
-        stat,
-        vex,
-      ]}
-      text="Open Sesame!"
-    >
+    // <PageLoader
+    //   preloadImages={[
+    //     batts,
+    //     board,
+    //     dummyboard,
+    //     DVD,
+    //     elevator,
+    //     holo,
+    //     myndful,
+    //     portfolio,
+    //     stat,
+    //     vex,
+    //   ]}
+    //   text="Open Sesame!"
+    // >
       <div className="Projects">
         <Navbar />
         <Parallax>
@@ -55,6 +55,6 @@ export default function Projects() {
         </Parallax>
         <Footer />
       </div>
-    </PageLoader>
+    // </PageLoader>
   );
 }

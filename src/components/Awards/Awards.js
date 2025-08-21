@@ -37,7 +37,7 @@ export default function AwardsCerts({ awards = defaultAwards }) {
   return (
     <section id="awards" className="ac">
       <div className="ac__header">
-        <h2>Awards &amp; Certifications</h2>
+        <h2>Awards</h2>
         <p>
           My highlights from my learning journey: wins, credentials, and moments
           I’m proud of.
