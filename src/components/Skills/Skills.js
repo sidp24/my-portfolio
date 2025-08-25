@@ -53,8 +53,8 @@ export default function Skills() {
       <motion.div className="skills__header" variants={chipVariants}>
         <h2>Skills</h2>
         <p>
-          A snapshot of the stacks and strengths I use to build reliable,
-          scalable, and delightful software.
+          A snapshot of the stacks and strengths I use to build reliable and
+          scalable software.
         </p>
       </motion.div>
 

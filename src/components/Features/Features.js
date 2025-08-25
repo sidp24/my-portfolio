@@ -14,7 +14,6 @@ import elevator from "../images/elevator.jpeg";
 
 const projects = [
   {
-    id: 1,
     title: "Myndful",
     description:
       "An ML-powered mental health chatbot for adolescents. Built a TensorFlow Sequential model (3-layer dense net) trained via gradient descent, plus a React frontend for a smooth conversational UX.",
@@ -25,7 +24,6 @@ const projects = [
     tech: ["TensorFlow", "Python", "React", "Node.js"],
   },
   {
-    id: 2,
     title: "Statistical Arbitrage Simulator",
     description:
       "Modular Python framework for backtesting cointegration-based stat‑arb (pairs trading): finds cointegrated pairs, generates z‑score signals, simulates trades, and outputs PnL & performance stats. Streamlit app for interactive runs.",
@@ -35,9 +33,27 @@ const projects = [
     tags: ["Quant", "Backtesting", "Finance", "Data"],
     tech: ["Python", "pandas", "statsmodels", "yfinance", "Streamlit"],
   },
+  // {
+  //   title: "Trading Simulator",
+  //   description:
+  //     "Modular Python framework for backtesting cointegration-based stat‑arb (pairs trading): finds cointegrated pairs, generates z‑score signals, simulates trades, and outputs PnL & performance stats. Streamlit app for interactive runs.",
+  //   image: stat,
+  //   link: "https://github.com/sidp24/Statistical-Arbitrage-Simulator",
+  //   repo: "https://github.com/sidp24/Statistical-Arbitrage-Simulator",
+  //   tags: ["Quant", "Backtesting", "Finance", "Data"],
+  //   tech: ["Python", "pandas", "statsmodels", "yfinance", "Streamlit"],
+  // },  {
+  //   title: "Elvis Huynh Portfolio",
+  //   description:
+  //     "Modular Python framework for backtesting cointegration-based stat‑arb (pairs trading): finds cointegrated pairs, generates z‑score signals, simulates trades, and outputs PnL & performance stats. Streamlit app for interactive runs.",
+  //   image: stat,
+  //   link: "https://github.com/sidp24/Statistical-Arbitrage-Simulator",
+  //   repo: "https://github.com/sidp24/Statistical-Arbitrage-Simulator",
+  //   tags: ["Quant", "Backtesting", "Finance", "Data"],
+  //   tech: ["Python", "pandas", "statsmodels", "yfinance", "Streamlit"],
+  // },
 
   {
-    id: 3,
     title: "Data Visualization Dashboard",
     description:
       "Upload CSVs and explore data via interactive scatter & bar charts with real‑time updates and customization (titles/labels/styles).",
@@ -48,7 +64,6 @@ const projects = [
     tech: ["Python", "Pandas", "Plotly", "Dash", "HTML/CSS"],
   },
   {
-    id: 4,
     title: "Portfolio Website",
     description:
       "Personal portfolio site hosted on GitHub Pages. Focus on fast loads, clean sections, and mobile-friendly CSS.",
@@ -59,7 +74,6 @@ const projects = [
     tech: ["HTML", "CSS", "GitHub Pages"],
   },
   {
-    id: 5,
     title: "VEX25‑SCAR‑24in (fork)",
     description:
       "Fork of a VEX U SCARA arm project for study/adaptation. Useful for motion planning and manipulator control references.",
@@ -70,7 +84,6 @@ const projects = [
     tech: ["C++"],
   },
   {
-    id: 6,
     title: "Holobrain",
     description:
       "Hackathon repo (Python). Codebase for a HackRU build; scripts and app skeleton included.",
@@ -81,7 +94,6 @@ const projects = [
     tech: ["Python"],
   },
   {
-    id: 7,
     title: "ElevatorCode (FRC 7587)",
     description:
       "WPILib/Java control software for a competitive robotics elevator subsystem (Team 7587). Includes Gradle build, vendor deps, and structured subsystem code.",
@@ -92,7 +104,6 @@ const projects = [
     tech: ["Java", "WPILib", "Gradle"],
   },
   {
-    id: 8,
     title: "Dummyboard",
     description:
       "WPILib test harness for motors/controllers to onboard teammates and validate hardware quickly (FRC).",
@@ -103,7 +114,6 @@ const projects = [
     tech: ["Java", "WPILib", "Gradle"],
   },
   {
-    id: 9,
     title: "PIDTest",
     description:
       "Minimal WPILib project to experiment with PID control loops on robot hardware (FRC).",
@@ -115,7 +125,6 @@ const projects = [
   },
 
   {
-    id: 10,
     title: "BomBot2022",
     description:
       "FRC robot code (Java/WPILib) for the 2022 season. Standard Gradle/WPILib structure.",
@@ -179,7 +188,7 @@ export default function Features() {
         <div className="features__grid">
           {filtered.map((project) => (
             <ProjectCard
-              key={project.id}
+              key={project.title}
               title={project.title}
               description={project.description}
               image={project.image}
