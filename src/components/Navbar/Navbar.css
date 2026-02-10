@@ -96,18 +96,22 @@
   flex-direction: column;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
+  gap: 6px;
+  padding: 0.4rem;
+  border-radius: 8px;
+  z-index: 1001;
 }
 
 .hamburger div {
-  width: 30px;
-  height: 3px;
+  width: 28px;
+  height: 2px;
   background-color: rgba(247, 234, 252, 0.6);
-  margin: 5px;
   transition: all 0.3s ease;
+  transform-origin: center;
 }
 
 .hamburger.active div:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: translateY(8px) rotate(45deg);
 }
 
 .hamburger.active div:nth-child(2) {
@@ -115,7 +119,7 @@
 }
 
 .hamburger.active div:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 /* Mobile Styles */

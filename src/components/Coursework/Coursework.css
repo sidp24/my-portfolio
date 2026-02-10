@@ -150,13 +150,13 @@
   background: var(--chip);
   padding: 0.45rem 0.65rem;
   border-radius: 999px;
-  font-size: 0.92rem;
+  font-size: 0.85rem;
   color: var(--text);
   transition:
-    min-width 0.7s cubic-bezier(.77,0,.18,1),
-    max-width 0.7s cubic-bezier(.77,0,.18,1),
-    background 0.2s,
-    box-shadow 0.25s;
+    background 0.2s ease-in-out,
+    border-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
   user-select: none;
   will-change: transform;
   line-height: 1;
@@ -165,32 +165,14 @@
 .coursework__chip:hover {
   background: var(--chip-hover);
   border-color: rgba(124, 242, 198, 0.35);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 .coursework__chip:active {
   transform: translateY(0);
 }
+
 .coursework__chip-wrapper {
   position: relative;
   display: inline-block;
-}
-.coursework__chip--expanded {
-  background: var(--chip-hover);
-  border-color: rgba(124, 242, 198, 0.35);
-  min-width: 220px;
-  max-width: 340px;
-  white-space: normal;
-  padding-right: 1rem;
-  transition:
-    min-width 0.7s cubic-bezier(.77,0,.18,1),
-    max-width 0.7s cubic-bezier(.77,0,.18,1),
-    background 0.2s,
-    box-shadow 0.25s;
-  box-shadow: 0 0 0 0.18rem var(--accent-2, #7cb8ff);
-}
-.coursework__chip-desc {
-  display: inline;
-  margin-left: 0.5rem;
-  vertical-align: middle;
 }
 

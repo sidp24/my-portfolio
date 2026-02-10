@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFlask,
@@ -172,8 +172,6 @@ export default function Coursework() {
 /* ---------- Subcomponents ---------- */
 
 function CourseCard({ title, icon, items, variant }) {
-  const [hovered, setHovered] = useState(null);
-
   return (
     <motion.article
       className="coursework__card"
@@ -186,50 +184,14 @@ function CourseCard({ title, icon, items, variant }) {
         <h3 className="coursework__card-title">{title}</h3>
       </header>
       <motion.div className="coursework__chips" variants={containerVariants}>
-        {items.map((c, i) => (
+        {items.map((c) => (
           <motion.span
             key={c.name}
-            className={`coursework__chip${hovered === i ? " coursework__chip--expanded" : ""}`}
+            className="coursework__chip"
             role="listitem"
-            title={c.name}
             variants={chipVariants}
-            onMouseEnter={() => setHovered(i)}
-            onMouseLeave={() => setHovered(null)}
-            layout
-            animate={
-              hovered === i
-                ? { scale: [1, 1.08, 1], transition: { duration: 3, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" } }
-                : { scale: 1, transition: { duration: 0.3 } }
-            }
-            style={{
-              cursor: "pointer",
-              minWidth: hovered === i ? "220px" : "auto",
-              maxWidth: hovered === i ? "340px" : "none",
-              whiteSpace: hovered === i ? "normal" : "nowrap",
-              overflow: "hidden",
-              transition: "min-width 0.7s cubic-bezier(.77,0,.18,1), max-width 0.7s cubic-bezier(.77,0,.18,1), background 0.2s",
-            }}
           >
-            <span style={{ fontWeight: 500 }}>{c.name}</span>
-            <AnimatePresence>
-              {hovered === i && (
-                <motion.span
-                  className="coursework__chip-desc"
-                  initial={{ opacity: 0, x: 10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 10 }}
-                  transition={{ duration: 0.25 }}
-                  style={{
-                    marginLeft: "0.5rem",
-                    fontWeight: 400,
-                    color: "#a7b2c3",
-                    fontSize: "0.93rem",
-                  }}
-                >
-                  {c.desc}
-                </motion.span>
-              )}
-            </AnimatePresence>
+            {c.name}
           </motion.span>
         ))}
       </motion.div>
