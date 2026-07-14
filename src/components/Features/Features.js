@@ -16,7 +16,7 @@ const projects = [
   {
     title: "Myndful",
     description:
-      "An ML-powered mental health chatbot for adolescents. Built a TensorFlow Sequential model (3-layer dense net) trained via gradient descent, plus a React frontend for a smooth conversational UX.",
+      "ML-powered mental health chatbot for adolescents. Trained a TensorFlow Sequential model from scratch — the hard part wasn't the architecture, it was making responses feel useful rather than technically correct. React frontend for the conversational flow.",
     image: Image1,
     link: "https://myndful.ai/",
     repo: null,
@@ -26,7 +26,7 @@ const projects = [
   {
     title: "Statistical Arbitrage Simulator",
     description:
-      "Modular Python framework for backtesting cointegration-based stat‑arb (pairs trading): finds cointegrated pairs, generates z‑score signals, simulates trades, and outputs PnL & performance stats. Streamlit app for interactive runs.",
+      "Wanted to understand how pairs trading actually works mechanically, so I built the framework instead of just reading about it. Finds cointegrated pairs, generates z‑score signals, simulates trades, outputs PnL. Streamlit frontend so the parameters are actually tunable.",
     image: stat,
     link: "https://github.com/sidp24/Statistical-Arbitrage-Simulator",
     repo: "https://github.com/sidp24/Statistical-Arbitrage-Simulator",
@@ -66,7 +66,7 @@ const projects = [
   {
     title: "Portfolio Website",
     description:
-      "Personal portfolio site hosted on GitHub Pages. Focus on fast loads, clean sections, and mobile-friendly CSS.",
+      "The site you're looking at. Built with React, hosted on GitHub Pages. The goal was making the work easy to find — not hiding it behind animations.",
     image: portfolio,
     link: "https://sidp24.github.io/my-portfolio/",
     repo: "https://github.com/sidp24/my-portfolio",
@@ -76,7 +76,7 @@ const projects = [
   {
     title: "VEX25‑SCAR‑24in (fork)",
     description:
-      "Fork of a VEX U SCARA arm project for study/adaptation. Useful for motion planning and manipulator control references.",
+      "Forked and adapted motion planning code for a VEX U SCARA arm — hands-on way to understand manipulator kinematics rather than just reading about them. Part of the robotics work that led to top-25 at VEXU Worlds.",
     image: vex,
     link: "https://github.com/sidp24/VEX25-SCAR-24in",
     repo: "https://github.com/sidp24/VEX25-SCAR-24in",
@@ -86,7 +86,7 @@ const projects = [
   {
     title: "Holobrain",
     description:
-      "Hackathon repo (Python). Codebase for a HackRU build; scripts and app skeleton included.",
+      "1st place at HackRU. Built under 24-hour constraints in Python — the kind of project where the time pressure forces you to make decisions that slower builds tend to avoid.",
     image: holo,
     link: "https://github.com/sidp24/HackRU",
     repo: "https://github.com/sidp24/HackRU",

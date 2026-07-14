@@ -1,11 +1,9 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { 
-  faCode, 
-  faToolbox, 
+import {
+  faCode,
+  faToolbox,
   faCloud,
-  faCodeBranch,
-  faUsers
 } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import "./Skills.css";
@@ -107,26 +105,6 @@ export default function Skills() {
           variant={cardVariants[0]}
         />
 
-        <SkillCard
-          title="Version Control"
-          icon={<FontAwesomeIcon icon={faCodeBranch} className="about__icon"/>}
-          items={["Git", "GitHub"]}
-          variant={cardVariants[1]}
-        />
-
-        <SkillCard
-          title="Soft Skills"
-          icon={<FontAwesomeIcon icon={faUsers} className="about__icon"/>}
-          items={[
-            "Communication",
-            "Problem-Solving",
-            "Teamwork",
-            "Leadership",
-            "Time Management",
-            "Collaboration",
-          ]}
-          variant={cardVariants[0]}
-        />
       </motion.div>
     </motion.section>
   );

@@ -5,8 +5,6 @@ import "./Hero.css";
 import HeroImage from "../images/pfp.jpg";
 import FOG from "vanta/dist/vanta.fog.min";
 import * as THREE from "three";
-import { TypeAnimation } from "react-type-animation";
-
 export default function Hero() {
   const containerRef = useRef(null);   // DOM node for Vanta
   const vantaEffectRef = useRef(null); // Vanta instance
@@ -51,23 +49,10 @@ export default function Hero() {
             <div className="hero-text">
               <h1 className="hero-title">Siddharth Paul</h1>
 
-              <div className="subheadline">
-                <TypeAnimation
-                  sequence={[
-                    "Physicist & Software Engineer", 2000,
-                    "Hackathon Winner", 2000,
-                    "Full-Stack Developer", 2000,
-                    "AI & Data Enthusiast", 2000,
-                    "Robotics Builder", 2000,
-                    "Cloud & API Engineer", 2000,
-                    "Creative Problem Solver", 2000,
-                    "Tech + Music Lover", 2000,
-                  ]}
-                  speed={50}
-                  repeat={Infinity}
-                  style={{ fontSize: "1.6rem", lineHeight: 1.2 }}
-                />
-              </div>
+              <p className="subheadline">
+                Building things that sit somewhere between research and product —
+                usually by starting before I know how.
+              </p>
 
               <div className="cta-buttons">
                 <Link to="/projects" className="cta-primary">View My Work</Link>

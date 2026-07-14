@@ -43,38 +43,36 @@ export default function Bio() {
       viewport={{ once: true, amount: 0.25 }}
     >
       <div className="about__inner">
-        <h2 className="about__title">About Me</h2>
+        <h2 className="about__title">About</h2>
 
         {/* 2 columns × 3 rows. Order controls placement:
             [L1, R1, L2, R2, L3, R3] */}
         <div className="about__grid">
-          {/* Row 1 — Left: Foundation */}
+          {/* Row 1 — Left: The pattern */}
           <motion.article className="card" variants={cardVariants}>
-            <p className="card__kicker">Foundation</p>
-            <h3 className="card__title">Physics mindset, builder’s toolkit</h3>
+            <p className="card__kicker">The pattern</p>
+            <h3 className="card__title">Start confused. Ship something real.</h3>
             <div className="card__body measure">
               <p>
-                I’m <strong>Siddharth Paul</strong>, a problem solver at the
-                intersection of <strong>Computer Science</strong> and{" "}
-                <strong>Physics</strong>. Physics trains me to reduce complexity
-                to core principles, then reason upward. Mathematics formalizes
-                those abstractions, and computer science turns them into{" "}
-                <em>systems that run</em>.
+                Most of what I build starts with a gap I don’t know how to
+                fill. The hBN photoluminescence pipeline started because I had
+                raw scans and no real analysis tool — I didn’t understand the
+                optics setup going in. I figured it out. That’s roughly how
+                everything goes.
               </p>
             </div>
           </motion.article>
 
-          {/* Row 1 — Right: Impact (with more achievements) */}
+          {/* Row 1 — Right: Impact */}
           <motion.article className="card" variants={cardVariants}>
             <p className="card__kicker">Impact</p>
-            <h3 className="card__title">From idea to shipped outcomes</h3>
+            <h3 className="card__title">Things shipped while figuring it out</h3>
             <div className="card__body measure">
               <div className="stats">
                 <span className="stat">
                   <FontAwesomeIcon icon={faTrophy} className="icon" />
                   National Hackathon Wins
                 </span>
-
                 <span className="stat">
                   <FontAwesomeIcon icon={faRocket} className="icon" />
                   VEXU Worlds — Top 25
@@ -91,31 +89,29 @@ export default function Bio() {
             </div>
           </motion.article>
 
-          {/* Row 2 — Left: What I Build */}
+          {/* Row 2 — Left: Work */}
           <motion.article className="card" variants={cardVariants}>
             <p className="card__kicker">Work</p>
-            <h3 className="card__title">What I build</h3>
+            <h3 className="card__title">Cross-domain, end to end</h3>
             <div className="card__body measure">
               <p>
-                My projects span <em>algorithmic trading simulations</em>,{" "}
-                <em>AI-driven mental health platforms</em>,{" "}
-                <em>interactive web apps</em>, and{" "}
-                <em>machine-learning prototypes</em>, covering the stack from UI
-                and APIs to infrastructure.
+                Physics data pipelines. AR systems. Algorithmic trading
+                frameworks. ML prototypes. Full-stack apps. The stack varies —
+                the goal doesn’t: get the system to a point where it actually
+                works, not just looks like it does.
               </p>
             </div>
           </motion.article>
 
           {/* Row 2 — Right: Beyond Tech */}
           <motion.article className="card" variants={cardVariants}>
-            <p className="card__kicker">Beyond Tech</p>
-            <h3 className="card__title">Outside the editor</h3>
+            <p className="card__kicker">Outside the editor</p>
+            <h3 className="card__title">Guitar, gym, late-night drives</h3>
             <div className="card__body measure">
               <p>
-                You’ll find me in the gym, on guitar, or grooving to{" "}
-                <strong>Pink Floyd</strong> and <strong>The Beatles</strong>.
-                Besides that, I tinker with <strong>robotics</strong> and make
-                time for friends; late-night drives and new food spots included.
+                Pink Floyd and The Beatles. The gym, guitar, robotics when
+                there’s no competition reason to. Friends, new food spots,
+                drives with no particular destination. That’s most of it.
               </p>
             </div>
           </motion.article>
