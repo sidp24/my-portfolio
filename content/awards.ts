@@ -30,6 +30,13 @@ export const awards: Award[] = [
       "Delivered a keynote on applying AI and conversational chatbots to support educators, drawn from firsthand experience building and deploying Myndful.",
   },
   {
+    title: "Keynote Speaker — edWeb",
+    org: "edWeb",
+    year: "2023",
+    description:
+      "Presented how Myndful addresses gaps in school mental-health resources, and shared UX principles for building student-friendly chat interfaces.",
+  },
+  {
     title: "Congressional App Challenge — Winner",
     org: "U.S. House of Representatives (Rep. Frank Pallone)",
     year: "2022",

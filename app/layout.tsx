@@ -14,13 +14,29 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const description =
+  "Siddharth Paul is a computer science and physics student at Rutgers building research tooling, AR systems, and full-stack software.";
+
 export const metadata: Metadata = {
+  // Origin only — the basePath (/my-portfolio on Pages) is prepended to the
+  // file-convention OG image automatically; including it here would double it.
+  metadataBase: new URL("https://sidp24.github.io/"),
   title: {
     default: "Siddharth Paul",
     template: "%s — Siddharth Paul",
   },
-  description:
-    "Siddharth Paul is a computer science and physics student at Rutgers building research tooling, AR systems, and full-stack software.",
+  description,
+  openGraph: {
+    type: "website",
+    siteName: "Siddharth Paul",
+    title: "Siddharth Paul",
+    description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Siddharth Paul",
+    description,
+  },
 };
 
 export default function RootLayout({

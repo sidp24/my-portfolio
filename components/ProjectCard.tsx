@@ -5,7 +5,7 @@ import { asset } from "@/lib/asset";
 export default function ProjectCard({ project }: { project: Project }) {
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card">
-      {project.image && (
+      {project.image ? (
         <div className="relative aspect-[16/9] border-b border-border">
           <Image
             src={asset(project.image)}
@@ -14,6 +14,16 @@ export default function ProjectCard({ project }: { project: Project }) {
             sizes="(max-width: 640px) 100vw, 50vw"
             className="object-cover"
           />
+        </div>
+      ) : (
+        <div
+          className="relative flex aspect-[16/9] items-end overflow-hidden border-b border-border bg-[radial-gradient(120%_120%_at_0%_0%,rgba(91,140,255,0.14),transparent_55%)]"
+          aria-hidden="true"
+        >
+          <div className="absolute inset-0 bg-[radial-gradient(var(--border)_1px,transparent_1px)] [background-size:16px_16px] opacity-40" />
+          <span className="relative m-5 font-mono text-xs lowercase tracking-widest text-muted-2">
+            {project.slug}
+          </span>
         </div>
       )}
 
