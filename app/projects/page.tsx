@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import ProjectGrid from "@/components/ProjectGrid";
+import { canonical } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Projects",
   description:
     "Research tooling, hackathon builds, and things I made to understand a topic better.",
+  alternates: { canonical: canonical("/projects/") },
 };
 
 export default function ProjectsPage() {

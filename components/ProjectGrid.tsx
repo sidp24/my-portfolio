@@ -45,7 +45,7 @@ export default function ProjectGrid() {
         </span>
       </div>
 
-      <div className="mt-8 grid gap-4 sm:grid-cols-2">
+      <div className="mt-8 grid gap-4 fade-in-stagger sm:grid-cols-2">
         {filtered.map((project) => (
           <ProjectCard key={project.slug} project={project} />
         ))}

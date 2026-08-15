@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { siteOrigin } from "@/lib/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,7 +21,9 @@ const description =
 export const metadata: Metadata = {
   // Origin only — the basePath (/my-portfolio on Pages) is prepended to the
   // file-convention OG image automatically; including it here would double it.
-  metadataBase: new URL("https://sidp24.github.io/"),
+  // Per-build, so the Vercel mirror resolves its own OG image instead of
+  // pointing at a path that only exists under the Pages basePath.
+  metadataBase: new URL(siteOrigin),
   title: {
     default: "Siddharth Paul",
     template: "%s — Siddharth Paul",
@@ -49,7 +52,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col">
+      <body className="flex min-h-full flex-col" suppressHydrationWarning>
         <Navbar />
         <main className="grow">{children}</main>
         <Footer />

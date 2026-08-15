@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { site } from "@/content/site";
+import NavigationIndicator from "@/components/NavigationIndicator";
 
 const links = [
   { href: "/experience", label: "Experience" },
@@ -15,6 +16,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur">
+      <NavigationIndicator />
       <nav className="mx-auto flex h-14 max-w-5xl items-center justify-between px-5">
         <Link
           href="/"
@@ -65,8 +67,8 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {open && (
-        <div className="border-t border-border sm:hidden">
+      <div className={`mobile-menu border-t border-border sm:hidden${open ? " is-open" : ""}`}>
+        {open && (
           <div className="mx-auto flex max-w-5xl flex-col px-5 py-2">
             {links.map((l) =>
               l.external ? (
@@ -92,8 +94,8 @@ export default function Navbar() {
               )
             )}
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </header>
   );
 }

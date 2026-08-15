@@ -31,6 +31,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -48,4 +49,120 @@ body {
 ::selection {
   background: var(--accent);
   color: var(--accent-foreground);
+}
+
+/* Motion stays small and purposeful: the accent line communicates route work,
+   while content uses the same soft easing as the existing Reveal primitive. */
+.navigation-indicator {
+  position: absolute;
+  inset: 0 auto auto 0;
+  z-index: 1;
+  height: 1px;
+  width: 0;
+  background: var(--accent);
+  opacity: 0;
+  transition: width 180ms var(--ease-out-soft), opacity 180ms ease;
+}
+
+.navigation-indicator.is-pending {
+  width: 72%;
+  opacity: 1;
+  animation: navigation-progress 900ms var(--ease-out-soft) infinite alternate;
+}
+
+.mobile-menu {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 220ms var(--ease-out-soft), opacity 160ms ease;
+}
+
+.mobile-menu > div {
+  overflow: hidden;
+}
+
+.mobile-menu.is-open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+/* Loading orb: subtle pulse that draws attention without being intrusive */
+.loading-orb {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 35%, transparent);
+  animation: loading-pulse 1.2s ease-out infinite;
+}
+
+/* Skeleton pulses: slightly faster and subtler than content pulsing in */
+.skeleton-pulse {
+  background: var(--card);
+  animation: skeleton-shimmer 2s var(--ease-out-soft) infinite;
+}
+
+/* Content entrance: smooth fade-in, respects layout shift */
+.fade-in {
+  animation: fade-in 400ms var(--ease-out-soft) forwards;
+  opacity: 0;
+}
+
+/* Stagger items in lists: offset each by 40ms for smooth cascade */
+.fade-in-stagger > * {
+  animation: fade-in 400ms var(--ease-out-soft) forwards;
+  opacity: 0;
+}
+
+.fade-in-stagger > :nth-child(1) { animation-delay: 0ms; }
+.fade-in-stagger > :nth-child(2) { animation-delay: 40ms; }
+.fade-in-stagger > :nth-child(3) { animation-delay: 80ms; }
+.fade-in-stagger > :nth-child(4) { animation-delay: 120ms; }
+.fade-in-stagger > :nth-child(5) { animation-delay: 160ms; }
+.fade-in-stagger > :nth-child(n+6) { animation-delay: 200ms; }
+
+@keyframes navigation-progress {
+  from { transform: translateX(-12%); }
+  to { transform: translateX(32%); }
+}
+
+@keyframes loading-pulse {
+  70% { box-shadow: 0 0 0 10px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+@keyframes skeleton-shimmer {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navigation-indicator,
+  .mobile-menu {
+    transition: none;
+  }
+
+  .navigation-indicator.is-pending,
+  .loading-orb,
+  .skeleton-pulse,
+  .fade-in,
+  .fade-in-stagger > * {
+    animation: none;
+  }
+
+  .fade-in {
+    opacity: 1;
+    transform: none;
+  }
 }

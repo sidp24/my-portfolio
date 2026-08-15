@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Experience from "@/components/Experience";
+import { canonical } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Experience",
   description:
     "Internships at Iconectiv, research in the Q-Sim lab, and the teams I've led along the way.",
+  alternates: { canonical: canonical("/experience/") },
 };
 
 export default function ExperiencePage() {
